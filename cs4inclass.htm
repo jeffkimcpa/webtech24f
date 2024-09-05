@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Maps and Image Positioning</title>
+    <style>
+        body{background-image:url(music-1.gif);
+        background-position: center;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        }
+
+        map {float: center; border:2px; border-color:blueviolet;}
+    </style>
+</head>
+<body>
+    <img src="Middlesex-1.gif" usemap="#middlesex">
+
+    <map name="middlesex">
+        <area target="_blank" alt="City of Newton" href="http://www.newtonma.gov" coords="331,335,379,367" shape="rect">
+        <area target="_blank" alt="Town of Wellesley" href="http://www.wellesleyma.gov" coords="297,358,328,384" shape="rect">
+    </map>
+</body>
+</html>
