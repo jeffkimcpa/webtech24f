@@ -1,0 +1,10 @@
+table, td {border: 1px solid black; }
+table {width: 75%; margin-right: auto; margin-left: auto;
+    font-family: Arial; text-align: center; color: coral; background:url(music-1.gif) repeat center fixed;
+    border-collapse:collapse; }
+tr#row1 {background: yellow}
+
+td.column1 {width: 30%}
+td.column2 {width: 50%}
+td.column3 {width: 20%}
+caption {font-size: 3em}
