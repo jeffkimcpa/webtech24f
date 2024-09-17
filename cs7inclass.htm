@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>Advanced CSS</title>
+    <style>
+      /* div#one p {color:crimson;} When you use a space, it refers to ALL decendents of the tag */
+      /* div#one h1 {color: red;} */
+      /*div#one > p {color: coral;}*/ /*The > sign address DIRECT decendents only and not ALL decendents*/
+      /* h2 + hr {color:red;} */
+      /*h2:first-child {color:yellow;} */
+      /* ul ol > li {
+        color: forestgreen;
+      } */
+      /*ul > li {color:red;}*/
+
+      div#ship {background-color: aquamarine; width: 200px; height: 10%; margin: auto; overflow: scroll;}
+
+      img#tig {width: 40%; border-radius: 50%; margin: auto; display: block;}
+      img#tig:hover {box-shadow: 20px 20px 10px 10px lime;}
+      div.container {position:relative; width: 50%; height: auto;
+                        margin: auto; border: 5px solid green;}
+      img#foto {width: 100%; display: block;}
+      div.curtain {position: absolute; top: 0%; left: 0%; right: 0%;
+                    overflow: hidden; width: 100%; height: 5%; background-color: silver; transition: 5s ease
+        }
+    div.words {position: relative; top: 30%; left: 10%; font-family: Arial; font-size: medium; color: navy;}
+      div.container:hover div.curtain{height: 100%}
+    </style>
+  </head>
+
+  <body>
+    <div id="one">
+      <h1>Paragraph 1</h1>
+      <p>
+        It's hard to tell what goes through a baby elephant's mind when its mom
+        is trying to put it to sleep. Do you think baby elephants wake up in the
+        middle of the night and cry? Do their moms and dads take turns getting
+        up with them to rock them back to sleep? How do you rock an elephant,
+        anyway? And what about gorillas?
+      </p>
+      <div id="two">
+        <h2>Paragraph 2</h2>
+        <hr />
+        <p>
+          Today in the paper there's a story about a new gorilla that was just
+          born in Franklin Park. Its mom is holding on to it just like any proud
+          human mom. And I have to wonder if they go through as much trauma as
+          that human mom when it comes to sleep, and food, and diapers, and
+          running into the street.
+        </p>
+      </div>
+    </div>
+    <div id="three">
+      <h2>Paragraph 3</h2>
+      <p>
+        Why is it so easy for them? Are they better parents? Do they just not
+        worry about every little detail? I've never known a gorilla to read and
+        study carefully seventeen books on bringing up baby gorillas. And they
+        seem to know just what to do. They never worry about spoiling their
+        little gorilla babies. They never worry about not having enough time
+        with them. Now, don't get me wrong, I'd rather be human than a gorilla
+        any day. Just imagine having to sit in a zoo. (Did you figure out yet
+        that while gorillas were on my mind, I could only find a picture of an
+        elephant?)
+      </p>
+      <ul>
+        <li>
+          P3 - Item 1
+          <ol>
+            <li>Subitem 1</li>
+            <li>Subitem 2</li>
+          </ol>
+        </li>
+
+        <li>P3 - Item 2</li>
+        <li>P3 - Item 3</li>
+      </ul>
+    </div>
+    <hr />
+    <hr />
+    <hr />
+    <!-- End of Part 1 -->
+    <div id="ship">
+        <p>
+            Ships are typically larger than boats, but there is no universally accepted
+            distinction between the two. Ships generally can remain at sea for longer
+            periods of time than boats.[3] A legal definition of ship from Indian case
+            law is a vessel that carries goods by sea.[4] A common notion is that a ship
+            can carry a boat, but not vice versa.[5] A ship is likely to have a
+            full-time crew assigned.[6] A US Navy rule of thumb is that ships heel
+            towards the outside of a sharp turn, whereas boats heel towards the
+            inside[7] because of the relative location of the center of mass versus the
+            center of buoyancy.[8][9] American and British 19th century maritime law
+            distinguished "vessels" from other watercraft; ships and boats fall in one
+            legal category, whereas open boats and rafts are not considered vessels.[10]
+            Particularly in the Age of Sail, the word ship might apply generally to a
+            seagoing vessel or particularly to a full-rigged sailing ship with three or
+            more masts, all square-rigged. Other rigs on seagoing vessels included brig,
+            barque, and barquentine.[11]: 8 [12]: 2 [13]: 222  Some large vessels are
+            traditionally called boats, notably submarines.[14] Others include Great
+            Lakes freighters, riverboats, and ferryboats, which may be designed for
+            operation on inland or protected coastal waters.[10]
+        </p>
+    </div>
+    <img src="tiger5.jpg" alt="Place Tiger Image Here" title="Big Tiger Image" id="tig"/>
+    <hr/>
+    <div class="container">
+        <img id="foto" src="photo.jpg" alt="Sunset Image" title="Sunset in Hawaii"/>
+        <div class="curtain">
+            <div class="words">
+                This photograph was shot by the reknowned photographer <br/>
+                Shankar while he was skiing down a slope devoid of <br/>
+                snow and while being chased by a giant grizzly!!!
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
