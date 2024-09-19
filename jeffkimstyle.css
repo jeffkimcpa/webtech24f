@@ -1,0 +1,10 @@
+
+body {
+    background: url(background.gif) repeat center fixed;
+}
+
+h1 {
+    font-family: arial;
+    color: navy;
+    text-align: center;
+}
