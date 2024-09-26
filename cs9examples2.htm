@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title> CS9 - Forms - Example</title>
+
+	<style>
+	/* Your styles go here */
+        h1 {font-family:Georgia; color:Red; text-align:center;}
+        form {background-color:silver; font-family:Arial; 
+              width:60%; margin-right:auto; margin-left:auto; 
+                color:navy;
+                border:2px dotted magenta;
+                padding-top:1%; padding-bottom:1%; padding-left:3%;}
+		
+	
+	</style>
+	<script type="text/javascript">	
+		
+
+	</script>
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+    <h1> My Example Form </h1>
+		<form method="post" action="">
+            <!-- This is a simple text box -->
+			<p>
+				Please Enter Your Name: &nbsp; &nbsp;
+				<input type="text" name="myname" size="20"  placeholder="Enter Name"/>
+			</p>
+            <!-- This is a drop down menu -->
+            <p>
+                Please select your class: 
+                <select name="myclass">
+                    <option value="Empty">Please Select One</option>
+                    <option value="FP">Freshperson</option>
+                    <option value="SO">Sophomore</option>
+                    <option value="JR">Junior</option>
+                    <option value="SR">Senior</option>
+                </select>
+            </p>
+            <!-- Building a radio button -->
+            <p>
+                Please select your favorite color:
+                <input type="radio" name="mycolor" value="red"/> Red &nbsp; &nbsp;
+                <input type="radio" name="mycolor" value="blue"/> Blue &nbsp; &nbsp;
+                <input type="radio" name="mycolor" value="green"/> Green
+            </p>
+            <!-- This is a check box -->
+            <p>
+                Please select your favorite magazine: <br/>
+                <input type="checkbox" name="mymags" value="WSJ"/> Wall Street Journal <br/>
+                <input type="checkbox" name="mymags" value="NYT"/> New York Times <br/>
+                <input type="checkbox" name="mymags" value="BG"/> Boston Globe
+            </p>
+            <p>
+                Please enter your suggestions for the course: <br/>
+                <textarea name="mysuggs" cols="40" rows="5" placeholder="Enter comments here"></textarea>
+            </p>
+            <p>
+                <input type="submit" name="Submit" value="Submit Data"/> &nbsp; &nbsp;
+                <input type="reset" name="Reset" value="Clear Data"/>
+            </p>
+
+
+
+
+		</form>
+	
+	
+  </body>
+</html>

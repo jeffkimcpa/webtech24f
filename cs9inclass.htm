@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>CS9 Inclass Form</title>
+
+	<style>
+
+	h1 {
+		text-align: center;
+	}
+
+	form {
+		border: 2px solid greenyellow;
+		background-color: silver;
+		width: 60%;
+		margin-left: 10%;
+	}
+
+	.question {
+		margin-left: 10px;
+		text-align: left;
+	}
+	
+	</style>
+	
+	
+	
+	
+	
+  </head>
+
+  <body>
+	<h1> My Class Form</h1>
+	<!-- Your HTML goes here -->
+	
+	<form method="POST" action="">
+	<p class="question">
+		Please enter your name: <input type="text" name="myname" size="20" placeholder="enter name">
+	</p>
+	<p class="question">
+		What is your gender: <br/>
+		Female: <input type="radio" name="sex" value="Female"/>
+		Male: <input type="radio" name="sex" value="Male"/>
+	</p>
+	<p class="question">
+		Please Indicate the School You Go To: <br/>
+		Harvard <input type="checkbox" name="Harvard" class="School"><br/>
+		Babson <input type="checkbox" name="Babson" class="School"><br/>
+		MIT <input type="checkbox" name="MIT" class="School"><br/>
+		BC <input type="checkbox" name="Boston College" class="School"><br/>
+		Northeastern <input type="checkbox" name="Northeastern" class="School">
+	</p>
+	<p class="question">
+		Indicate Your Grade:
+		<select name="grade" placeholder="Your grade">
+			<option value="EM">Please select your grade</option>
+			<option value="FR">Freshman</option>
+			<option value="SO">Sophomore</option>
+			<option value="JR">Junior</option>
+			<option value="SR">Senior</option>
+		</select>
+	</p>
+	<p class="question">
+		Please give me your suggestion for the course:<br/>
+		<textarea name="mysuggestion" cols="40" rows="5" placeholder="give us your thoughts"></textarea>
+	</p>
+	<p class="question">
+		<input type="submit" value="submit">
+		<input type="reset" value="reset">
+	</p>
+	</form>
+	
+	
+  </body>
+</html>
