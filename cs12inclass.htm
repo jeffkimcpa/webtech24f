@@ -4,7 +4,7 @@
 
   <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-	<title>CS11 - Practicing Javascript</title>
+	<title>CS12 - Practicing Javascript</title>
 
 	<style type="text/css">
 	h1 {
@@ -21,10 +21,20 @@
 	    
 	<script type="text/javascript">
     function changeTitle () 
-      {
-        document.getElementById('one').innerHTML = 'Practicing with Javascript';
-        document.getElementById('one').style.color='navy';
-        document.getElementById('one').style.textAlign = 'center';
+    // {
+    //     document.getElementById('one').innerHTML = 'Practicing with Javascript';
+    //     document.getElementById('one').style.color='navy';
+    //     document.getElementById('one').style.textAlign = 'center';
+    // }
+    {
+      var x;
+      const mytext = 'i\'ve used a sick ass variable'
+      x = document.getElementById('one');
+      x.innerHTML = mytext;
+      x.style.color = 'coral';
+      x.style.textAlign = 'right';
+      if (x.innerHTML == mytext);
+
     }
 
     function changeBgCol()
@@ -36,7 +46,40 @@
     {
       document.getElementById('p2').style.backgroundColor = 'white';
     }
-      
+    
+    function showVar()
+    {
+      var x , y , z;
+      const w = 100;
+      x = 15;
+      y = 35;
+      alert(x);
+      alert(y);
+      z = x + y;
+      alert(z);
+      x = 'fuck off ';
+      y = 'im tired';
+      z = x + y;
+      alert(z);
+      x = 20
+      y = '24'
+      z = x + y;
+      alert(z);
+    }
+
+    function changeMe()
+    {
+      var x;
+      x = document.getElementById('h21');
+      if (x.innerHTML == 'Don\'t Look - I am Changing')
+        {
+          x.innerHTML = 'Look, I have changed';
+        }
+      else
+      {
+        x.innerHTML = 'Don\'t Look - I am Changing';
+      }
+    }
 </script>
   </head>
 
@@ -63,13 +106,13 @@
     <h1> Understanding Variables in Javascript </h1>
     <!-- We will work through this one in class -->
     <p>
-    	<button> Click on me to start </button>
+    	<button onclick="showVar()"> Click on me to start </button>
     </p>
     <hr/>
     <h1> Conditional Statement - Practice</h1>
     <!-- When you click on the line below, change the text to -->
     <!-- I Have Changed! When you click again, go back to the -->
     <!-- original text.-->
-    <h2> Don't Look - I am Changing</h2>
+    <h2 id="h21" onclick="changeMe()"> Don't Look - I am Changing</h2>
   </body>
 </html>
