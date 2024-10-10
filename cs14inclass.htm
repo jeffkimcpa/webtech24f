@@ -35,17 +35,46 @@
                 myimg = document.getElementById('a');
                 var myinp;
                 myinp = prompt('Enter one of maple, shamrock, thyme, or clover')
+                myinp = myinp.toLowerCase();
                 if (myinp == 'maple'){
                     myimg.src = 'maple-1.jpg';
                     myimg.alt = 'Maple Leaf';
                     myimg.title = 'Majestic Maple';
                 }
                 else if (myinp == 'shamrock'){
-                    myimg.src = 'shamrock-1.jpg'
-                    myimg.alt = 'Shamrock'
-                    myimg.title = 'Majestic Shamrock'
+                    myimg.src = 'shamrock-1.jpg';
+                    myimg.alt = 'Shamrock';
+                    myimg.title = 'lotta Shamrock';
+                }
+
+                else if (myinp == 'thyme'){
+                    myimg.src = 'thyme-1.jpg';
+                    myimg.alt = 'Thyme Leaf';
+                    myimg.title = 'Tiny Thyme';
+                }
+
+                else if (myinp == 'clover'){
+                    myimg.src = 'clover-1.jpg';
+                    myimg.alt = 'Lucky Clover';
+                    myimg.title = 'Big Clover';
+                }
+
+                else {
+                    alert('You entered the wrong input.');
                 }
             }
+        
+        function changePic() {
+            const myimg = document.getElementById('daimg');
+            if(myimg.src.match('planes.jpg') == 'planes.jpg'){
+                myimg.src = 'Ships.jpg';
+            }
+
+            else {
+                myimg.src = 'planes.jpg';
+            }
+
+        }
                
 
            
@@ -81,7 +110,7 @@
             other image. The ALT and TITLE must change appropriately.
         </p></div>
         <div>
-            <img src="planes.jpg" alt="Planes" title="Flying High" width="200"/>
+            <img id="daimg" onclick="changePic()" src="planes.jpg" alt="Planes" title="Flying High" width="200"/>
         </div>
     
     </body>

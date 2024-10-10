@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Quiz 2 Practices</title>
+
+	<style>
+	/* Your styles go here */
+		ol {list-style-type:lower-roman;}
+		ul {list-style-type:square;}
+		a {text-decoration:none;}
+		a:hover {color:red;}
+
+		form {background-color:lightgreen; color:black;
+		font-family:arial; width:60%; margin-right:auto;
+		margin-left:auto; padding:2% 0% 2% 8%;}
+		p#buttons {padding-left: 30%;}
+		h2 {text-align:center; margin-bottom:20px;}
+	
+	
+	</style>
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+		<h1> Practice Question 1</h1>
+		<!-- Create a list with the following: The Carbs, Fruits, and Vegetables
+			must be part of an ordered list. This must have lower roman numerals.
+			The Pasta and Rice must be an unordered list that is nested within.
+			These must have square bullets. 
+			Hyperlink Pasta and Rice to their corresponding pages on wikipedia
+			The hyperlinks must not be underlined. When you mouseover these
+			links, the font color must change (to a different color - you pick)-->
+			<ol>
+				<li>Carbohydrates
+					<ul>
+						<li><a href="https://en.wikipedia.org/wiki/Pasta">Pasta</a></li>
+						<li><a href="https://en.wikipedia.org/wiki/Rice">Rice</a></li>
+					</ul>
+				</li>
+				<li>Fruits</li>
+				<li>Vegetables</li>
+			</ol>
+	<!-- End of Practice Question 1-->
+	<h1> Practice Question 2</h1>
+	<!-- Please build a form that captures the following: -->
+	<!-- Your Name: --> <!-- Use a text box for this -->
+	<!-- Your College Level - Freshperson, Sophomore etc. using a radio button-->
+	<!-- Your Major - 3 character code, like MKT, TEE, FIN, etc. using a text box-->
+	<!-- A text area to capture your ambitions - 5 rows, 75 char column-->
+	<!-- The submit and reset buttons at the bottom.-->
+	<!-- Please see additional document for an image that can guide you.-->
+	<!-- Form must be centered on the page. -->
+	<!-- Form must have a colored background - say, light green-->
+	<!-- The font, Arial, must be visible and readable - pick a color -->
+	<!-- The form must have all the content aligned on the left side 
+	 		see image for a better understanding -->
+	<!-- The form must have a heading "Student Form" using h2 tags-->
+	<!-- This heading must be centered on the page with a 20px space
+	 between the heading and the form. -->
+
+		<h2> Student Form</h2>
+	 <form action="" method="POST">
+		<p>
+			Your Name:&nbsp;<input type="text" name="urname" size="25"/>
+		</p>
+		<p>
+			College Level:&nbsp;
+			<input type="radio" name="level" value="FP"/> Freshperson &nbsp;
+			<input type="radio" name="level" value="SO"/> Sophomore &nbsp;
+			<input type="radio" name="level" value="JR"/> Junior &nbsp;
+			<input type="radio" name="level" value="SR"/> Senior &nbsp;
+		</p>
+		<p>
+			Your Major: &nbsp; <input type="text" name="major" size="5"/>
+		</p>
+		<p>
+			Your ambitions: <br/>
+			<textarea name="ambitions" cols="75" rows="5"></textarea>
+		</p>
+		<p id="buttons">
+			<input type="submit" name="submit" value="Submit"/> &nbsp;&nbsp;
+			<input type="reset" name="reset" value="Clear"/>
+		</p>
+
+	 </form>
+  </body>
+</html>
