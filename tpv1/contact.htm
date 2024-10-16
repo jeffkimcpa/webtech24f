@@ -4,11 +4,11 @@
 
   <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-	<title>Traveling to Japan!</title>
+	<title></title>
 
 	<style>
-  /* Beginning of Nav */
-	  div#banner {
+	/* Your styles go here */
+	div#banner {
         background-image: url(japan_banner.jpg);
 		margin-bottom: 0;
       }
@@ -29,6 +29,7 @@
         font-family: Arial;
 		margin-top: 0;
 		font-weight: bold;
+        margin-bottom: 0;
       }
 
       .topnav a {
@@ -157,43 +158,17 @@
                     .row{flex-direction:column;}
                     .about{width:80%; margin-right:auto; margin-left:auto;}
                 }
-    /* End of Nav */
-   
-    .introduction {
-      margin-left: 20px;
-      width: 45%;
+    form {
       font-family: sans-serif;
-    }
-
-    .intro-contents {
-      display: flex;
-    }
-
-    h2.introduction {
       font-weight: bold;
-      font-style: italic;
-      width: 100%;
+      background-color: bisque;
+      margin-top: 0;
+      padding: 20px;
     }
-
-    img {
-      width: 400px;
-      height: auto;
-      float: right;
-      margin-left: 20px;
-      margin-bottom: 20px;
-      border-radius: 30px;
-      
-    }
-
-    iframe {
-      float: right;
-      border: ridge red 6px;
-      margin-left: 10px;
-    }
+	
 	</style>
 	<script>
-  
-	function myFunction() {
+		function myFunction() {
         var x = document.getElementById("mytopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -214,13 +189,11 @@
 			x.style.backgroundImage = "url(japan_banner.jpg)";
 		}
 	}
-
-	
 	</script>
-	
   </head>
 
   <body>
+	<!-- Your HTML goes here -->
 	<!-- Navbar -->
 	<div id="banner" onclick='changeMe()'>
 		<h1 id="heading">Plan Your Trip to Japan!🎌</h1>
@@ -266,21 +239,49 @@
 		  >&#9776;</a>
 	  </div>
 		<!-- Navbar closed  -->
-    <h2 class="introduction">Welcome! A place where you can get to know Japan!</h2>
-    <div class ="intro-contents">
-      <p class="introduction"> 
-      Japan is an islandic country, located in East-Asia with a current population of <a href="https://www.worldometers.info/world-population/japan-population/" target="_blank">125.1 million.</a>
-      Having a rich culture, scenic nature, and tasty cuisine Japan has been a popular destination for tourists around the world, which has about 35 million tourists annually.
-      In being such a popular destination, Japan has been keen on preserving their historical landmarks and artifacts. Due to these efforts, Japan has countless
-      cities that integrates both modern, urban buildings as well as old, historic buildings, wherein the contrast makes it even more beautiful. This website aims to
-      provide my personal favorite attractions in three different cities, which also includes an itinerary builder based upon my database, which would provide the visitors to my website
-      adequate knowledge and planning before traveling to Japan. I hope my website helps your visit! Thanks.
-      </p>
-    <img src="japannight.jpg" alt="night of japan" title="japan lights">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/SW1qatQ3TGk?si=lyM4YsKzA0NjFYsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+	<form action="POST">
+		<p>
+		Travel Experience to Japan <br>
+		First time: <input type="radio" name="prior" value="FIRST">
+		Been there before: <input type="radio" name="prior" value="BEEN">
+		</p>
 
-   
+    <p>
+      Inquiry Type:
+      <select name="type" id="Inquiry" placeholder="select!">
+        <option value="EMPT">Please select one</option>
+        <option value="COMP">Complaint</option>
+        <option value="CORR">Correction</option>
+        <option value="PART">Partnership</option>
+        <option value="OTHE">Other</option>
+      </select> 
+    </p>
+
+		<p>
+		Name: <input type="text" size="12">
+		</p>
+
+		<p>
+		Phone Number: <input type="text" size="12">
+		</p>
+
+		<p>
+		Email: <input type="text" size="12">
+		</p>
+	
+
+
+		<p>
+		Questions or Comment: <br>
+		<textarea name="question" cols="40" rows="8" id=""></textarea>
+		</p>
+		
+		<input type="submit" value="SUBMIT">
+		<input type="reset" value="CLEAR">
+
+	</form>
+		
+	
 	
   </body>
 </html>

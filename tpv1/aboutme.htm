@@ -4,11 +4,12 @@
 
   <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-	<title>Traveling to Japan!</title>
+	<title></title>
 
 	<style>
-  /* Beginning of Nav */
-	  div#banner {
+	/* Your styles go here */
+	/* Beginning of Nav */
+	div#banner {
         background-image: url(japan_banner.jpg);
 		margin-bottom: 0;
       }
@@ -158,42 +159,22 @@
                     .about{width:80%; margin-right:auto; margin-left:auto;}
                 }
     /* End of Nav */
-   
-    .introduction {
-      margin-left: 20px;
-      width: 45%;
-      font-family: sans-serif;
-    }
 
-    .intro-contents {
-      display: flex;
-    }
+	table, td {
+		border: ridge 2px blue;
+		text-align: center;
+		margin: auto;
+		padding: 5px;
+	}
 
-    h2.introduction {
-      font-weight: bold;
-      font-style: italic;
-      width: 100%;
-    }
-
-    img {
-      width: 400px;
-      height: auto;
-      float: right;
-      margin-left: 20px;
-      margin-bottom: 20px;
-      border-radius: 30px;
-      
-    }
-
-    iframe {
-      float: right;
-      border: ridge red 6px;
-      margin-left: 10px;
-    }
+	#rankingtitle {
+		text-align: center;
+	}
+	
 	</style>
+
 	<script>
-  
-	function myFunction() {
+		function myFunction() {
         var x = document.getElementById("mytopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
@@ -214,13 +195,16 @@
 			x.style.backgroundImage = "url(japan_banner.jpg)";
 		}
 	}
-
-	
 	</script>
+	
+	
+	
+	
 	
   </head>
 
   <body>
+	<!-- Your HTML goes here -->
 	<!-- Navbar -->
 	<div id="banner" onclick='changeMe()'>
 		<h1 id="heading">Plan Your Trip to Japan!🎌</h1>
@@ -266,21 +250,35 @@
 		  >&#9776;</a>
 	  </div>
 		<!-- Navbar closed  -->
-    <h2 class="introduction">Welcome! A place where you can get to know Japan!</h2>
-    <div class ="intro-contents">
-      <p class="introduction"> 
-      Japan is an islandic country, located in East-Asia with a current population of <a href="https://www.worldometers.info/world-population/japan-population/" target="_blank">125.1 million.</a>
-      Having a rich culture, scenic nature, and tasty cuisine Japan has been a popular destination for tourists around the world, which has about 35 million tourists annually.
-      In being such a popular destination, Japan has been keen on preserving their historical landmarks and artifacts. Due to these efforts, Japan has countless
-      cities that integrates both modern, urban buildings as well as old, historic buildings, wherein the contrast makes it even more beautiful. This website aims to
-      provide my personal favorite attractions in three different cities, which also includes an itinerary builder based upon my database, which would provide the visitors to my website
-      adequate knowledge and planning before traveling to Japan. I hope my website helps your visit! Thanks.
-      </p>
-    <img src="japannight.jpg" alt="night of japan" title="japan lights">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/SW1qatQ3TGk?si=lyM4YsKzA0NjFYsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-   
-	
+	<div class="mypersonalranking">
+		<h1 id="rankingtitle">My Personal Ranking of Destinations in Japan</h1>
+		<table>
+			<tr>
+				<td>Name of Place</td>
+				<td>Rank</td>
+				<td>Reason</td>
+			</tr>
+			<tr>
+				<td>Sapporo</td>
+				<td>1</td>
+				<td>Has a lot to do around the area and really good nature</td>
+			</tr>
+			<tr>
+				<td>Kyoto</td>
+				<td>2</td>
+				<td>Rich historical artifacts and cultural hotspot</td>
+			</tr>
+			<tr>
+				<td>Tokyo</td>
+				<td>3</td>
+				<td>Really fun nightlife and diversity of activities</td>
+			</tr>
+			<tr>
+				<td>Osaka</td>
+				<td>4</td>
+				<td>Good food and nice people, but felt like mini-tokyo</td>
+			</tr>
+		</table>
+	</div>
   </body>
 </html>
