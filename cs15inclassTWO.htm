@@ -13,17 +13,41 @@
 
         <script type="text/javascript">
         
-            function doMath() {
+            function doMath(jeff) {
                 event.preventDefault();
-                var myform; mynum1, mynum2
-                myform = document.getElementById('f');
+                var myform, mynum1, mynum2;
+                myform = document.getElementById("f");
                 mynum1 = myform.num1.value;
                 mynum2 = myform.num2.value;
-                myform.res.value = mynum1 + mynum2;
+                
+
+                if ((mynum1 == "") || (mynum2 =="")) 
+                {
+                    alert("please enter values in both fields");
+                }
+
+                else if ((isNaN(mynum1) == true) || (isNaN(mynum2) == true)) 
+                {
+                    alert("please enter only numbers");
+                }
+
+                else {
+
+                    mynum1 = parseFloat(mynum1);
+                    mynum2 = parseFloat(mynum2);
+                    
+                    if (jeff == "A")
+                        myform.res.value = mynum1 + mynum2;
+                    else if (jeff == "S")
+                        myform.res.value = mynum1 - mynum2;
+                    else if (jeff == "M")
+                        myform.res.value = mynum1 * mynum2;
+                    else
+                        myform.res.value = mynum1 / mynum2;
+                
             }
-             
-             
-                  
+        }
+           
 
         
         
@@ -53,12 +77,13 @@
                 </select>
             </p>
             <p>
-                <button class="a" onclick="doMath()">Add</button> &nbsp;&nbsp; 
-                <button class="a" onclick="">Subtract</button>&nbsp;&nbsp; 
-                <button class="a">Multiply</button>&nbsp;&nbsp; 
-                <button class="a">Divide</button>
+                <button class="a" id="A" onclick="doMath(this.id)">Add</button> &nbsp;&nbsp; 
+                <button class="a" id="S" onclick="doMath(this.id)">Subtract</button>&nbsp;&nbsp; 
+                <button class="a" id="M" onclick="doMath(this.id)">Multiply</button>&nbsp;&nbsp; 
+                <button class="a" id="D" onclick="doMath(this.id)">Divide</button>
             </p>
             
+            <input onclick="resetForm()" type="reset" value="RESET">
             
         </form>
    

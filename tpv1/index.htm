@@ -176,7 +176,7 @@
       width: 100%;
     }
 
-    img {
+    #nightjapan {
       height: auto;
       float: right;
       margin-left: 20px;
@@ -193,6 +193,45 @@
     h3 {
       margin: 0;
     }
+
+    .japantravel {
+      font-family: sans-serif;
+      border-radius: 30px;
+      margin-left: 20px;
+    }
+
+    map {
+      width: 60%;
+      height: auto;
+      float: center;
+    }
+
+    #japanmap {
+      border-radius: 20px;
+      margin-left: 20px;
+      margin-right: 50px;
+    }
+
+    .insidejapan {
+    display: flexbox;
+    margin: 0;
+    float: left;
+   }
+
+   audio {
+    display: block;
+    margin: 30px;
+   }
+
+   body {
+    background: fixed bisque;
+   }
+
+   .structureofwebsite {
+    float: left;
+    padding: 50px;
+  }
+
 	</style>
 	<script>
   
@@ -221,13 +260,13 @@
 function makeBig(x) {
                 var myimg;
                 myimg = document.getElementById(x);
-                myimg.width = myimg.width * 1.1;
+                myimg.width = myimg.width * 1.5;
             }
 
 function makeSmall(x) {
                 var myimg;
                 myimg = document.getElementById(x);
-                myimg.width = myimg.width / 1.1;
+                myimg.width = myimg.width / 1.5;
             }
 
 	
@@ -292,13 +331,50 @@ function makeSmall(x) {
       provide my personal favorite attractions in three different cities, which also includes an itinerary builder based upon my database, which would provide the visitors to my website
       adequate knowledge and planning before traveling to Japan. I hope my website helps your visit! Thanks.
       </p>
-    <img onmouseover="makeBig()" onmouseout="makeSmall()" id="nightjapan" src="japannight.jpg" alt="night of japan" title="japan lights" width="300">
-    
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/SW1qatQ3TGk?si=lyM4YsKzA0NjFYsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <img onmouseover="makeBig(this.id)" onmouseout="makeSmall(this.id)" id="nightjapan" src="japannight.jpg" alt="night of japan" title="japan lights" width="300">
+    <br>
     <audio loop autoplay controls>
       <source src="Shamisen Girls Ki&Ki - Tsugaru Jongara Bushi.mp3">
     </audio>
+  </div>
+    
+
+    <div class="insidejapan">
+      <h2 class="japantravel">Map of Japan</h2>
+      <br/>
+      <img id="japanmap" src="mapofjapan.jpeg" usemap="#japancountry">
+      <map name="japancountry">
+        <area target="_blank" alt="" title="" href="https://tokyotokyo.jp/home/" coords="265,241,200,192" shape="rect">
+        <area target="_blank" coords="166,210,100,245" title="kyoto" href="https://kyoto.travel/en/" alt="kyoto" shape="rect">
+        <area target="_blank" coords="294,42,242,82" title="sapporo" href="https://www.sapporo.travel/en/" alt="sapporo" shape="rect">
+      </map>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/SW1qatQ3TGk?si=lyM4YsKzA0NjFYsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  
+    <div class="structureofwebsite">
+      <h2 class="japantravel">Structure of this website</h2>
+      <ul class="japantravel">
+        <li>Tokyo</li>
+            <ol>
+                <li>Eateries</li>
+                <li>Sightseeing</li>
+                <li>Stays</li>
+            </ol>
+        <li>Kyoto</li>
+            <ol>
+              <li>Eateries</li>
+              <li>Sightseeing</li>
+              <li>Stays</li>
+            </ol>
+          <li>Sapporo</li>
+            <ol>
+              <li>Eateries</li>
+              <li>Sightseeing</li>
+              <li>Stays</li>
+            </ol>
+        </ul>
+    </div>
+
 	
   </body>
 </html>
