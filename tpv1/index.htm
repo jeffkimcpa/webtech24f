@@ -86,6 +86,7 @@
       .dropdown:hover .dropdownbutton {
         background-color: coral;
         color: black;
+        font-weight: bold;
       }
 
       .dropdowncontent a:hover {
@@ -176,19 +177,21 @@
     }
 
     img {
-      width: 400px;
       height: auto;
       float: right;
       margin-left: 20px;
       margin-bottom: 20px;
       border-radius: 30px;
-      
     }
 
     iframe {
       float: right;
       border: ridge red 6px;
       margin-left: 10px;
+    }
+
+    h3 {
+      margin: 0;
     }
 	</style>
 	<script>
@@ -214,6 +217,18 @@
 			x.style.backgroundImage = "url(japan_banner.jpg)";
 		}
 	}
+
+function makeBig(x) {
+                var myimg;
+                myimg = document.getElementById(x);
+                myimg.width = myimg.width * 1.1;
+            }
+
+function makeSmall(x) {
+                var myimg;
+                myimg = document.getElementById(x);
+                myimg.width = myimg.width / 1.1;
+            }
 
 	
 	</script>
@@ -267,6 +282,7 @@
 	  </div>
 		<!-- Navbar closed  -->
     <h2 class="introduction">Welcome! A place where you can get to know Japan!</h2>
+    <h3 class="introduction">(click on the banner image for a surprise!)</h3>
     <div class ="intro-contents">
       <p class="introduction"> 
       Japan is an islandic country, located in East-Asia with a current population of <a href="https://www.worldometers.info/world-population/japan-population/" target="_blank">125.1 million.</a>
@@ -276,11 +292,13 @@
       provide my personal favorite attractions in three different cities, which also includes an itinerary builder based upon my database, which would provide the visitors to my website
       adequate knowledge and planning before traveling to Japan. I hope my website helps your visit! Thanks.
       </p>
-    <img src="japannight.jpg" alt="night of japan" title="japan lights">
+    <img onmouseover="makeBig()" onmouseout="makeSmall()" id="nightjapan" src="japannight.jpg" alt="night of japan" title="japan lights" width="300">
+    
     <iframe width="560" height="315" src="https://www.youtube.com/embed/SW1qatQ3TGk?si=lyM4YsKzA0NjFYsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-
-   
+    <audio loop autoplay controls>
+      <source src="Shamisen Girls Ki&Ki - Tsugaru Jongara Bushi.mp3">
+    </audio>
 	
   </body>
 </html>
