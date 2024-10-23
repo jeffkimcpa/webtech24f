@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title></title>
+
+	<style>
+	/* Your styles go here */
+	/* Beginning of Nav */
+	div#banner {
+        background-image: url(japan_banner.jpg);
+		margin-bottom: 0;
+    margin-top: 0;
+      }
+
+      h1#heading {
+        color: coral;
+        font-family: arial;
+        font-weight: bold;
+        text-align: center;
+        padding: 10%;
+		margin-bottom: 0;
+      }
+
+      /* This is the start of menu styling */
+      .topnav {
+        background-color: skyblue;
+        overflow: hidden;
+        font-family: Arial;
+		margin-top: 0;
+		font-weight: bold;
+      }
+
+      .topnav a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 40px;
+        text-decoration: none;
+        font-size: 1em;
+      }
+
+      .active {
+        background-color: coral;
+        color: white;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+
+      .dropdown .dropdownbutton {
+        font-size: 1em;
+        border: none;
+        outline: none;
+        color: black;
+        padding: 14px 40px;
+        font-family: inherit;
+        background-color: inherit;
+        margin: 0;
+      }
+
+      .dropdowncontent {
+        position: absolute;
+        display: none;
+        background-color: white;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdowncontent {
+        display: block;
+      }
+
+      .dropdowncontent a {
+        float: none;
+        display: block;
+        color: black;
+        padding: 12px 37px;
+        text-decoration: none;
+        text-align: left;
+        font-size: 0.75em;
+      }
+
+      .topnav a:hover,
+      .dropdown:hover .dropdownbutton {
+        background-color: coral;
+        color: black;
+      }
+
+      .dropdowncontent a:hover {
+        background-color: lightgrey;
+        color: black;
+      }
+
+      .topnav .icon {
+        display: none;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .about {
+        width: 27%;
+        margin: 3%;
+        text-align: justify;
+      }
+
+      body {
+        background: fixed bisque;
+      }
+
+    @media screen and (max-width: 750px) {
+        .topnav a:not(:first-child),
+        .dropdown .dropdownbutton {
+          display: none;
+        }
+
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+    @media screen and (max-width: 750px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .topnav.responsive .dropdown {
+                float: none;
+            }
+
+            .topnav.responsive .dropdowncontent {
+                position: relative;
+            }
+
+            .topnav.responsive .dropdown .dropdownbutton {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+    @media screen and (max-width:750px)
+                {
+                    .row{flex-direction:column;}
+                    .about{width:80%; margin-right:auto; margin-left:auto;}
+                }
+    /* End of Nav */
+
+	table, td {
+		border: ridge 2px blue;
+		text-align: center;
+		margin: auto;
+		padding: 5px;
+	}
+
+	#rankingtitle {
+		text-align: center;
+	}
+	
+	</style>
+
+	<script>
+		function myFunction() {
+        var x = document.getElementById("mytopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+    }
+
+	function changeMe() {
+		var x;
+		x = document.getElementById('banner');
+		if (x.style.backgroundImage.includes('japan_banner.jpg'))
+			{
+			x.style.backgroundImage = "url('japan_banner2.jpg')";
+			}
+		else
+		{
+			x.style.backgroundImage = "url(japan_banner.jpg)";
+		}
+	}
+	</script>
+	
+	
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+	<!-- Navbar -->
+	<div id="banner" onclick='changeMe()'>
+		<h1 id="heading">Plan Your Trip to Japan!🎌</h1>
+	  </div>
+	  <!-- This starts the menu -->
+	  <div class="topnav" id="mytopnav">
+		<a href="index.htm" class="active">Home</a>
+		<a href="contact.htm">Contact</a>
+		<a href="aboutme.htm">About Me</a>
+		<div class="dropdown">
+		  <button class="dropdownbutton">Tokyo</button>
+		  <div class="dropdowncontent">
+			<a href="info-tokyo.htm">Info</a>
+			<a href="eateries-tokyo.htm">Eateries</a>
+			<a href="sightseeing-tokyo.htm">Sightseeing</a>
+			<a href="stays-tokyo.htm">Stays</a>
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <button class="dropdownbutton">Kyoto</button>
+		  <div class="dropdowncontent">
+			<a href="info-kyoto.htm">Info</a>
+			<a href="eateries-kyoto.htm">Eateries</a>
+			<a href="sightseeing-kyoto.htm">Sightseeing</a>
+			<a href="stays-kyoto.htm">Stays</a>
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <button class="dropdownbutton">Sapporo</button>
+		  <div class="dropdowncontent">
+			<a href="info-sapporo.htm">Info</a>
+			<a href="eateries-sapporo.htm">Eateries</a>
+			<a href="sightseeing-sapporo.htm">Sightseeing</a>
+			<a href="stays-sapporo.htm">Stays</a>
+			</div>
+		</div>
+		<a href="itinerary.htm">Make Your Itinerary</a>
+		<a
+		  href="javascript:void(0);"
+		  style="font-size: 15px"
+		  class="icon"
+		  onclick="myFunction()"
+		  >&#9776;</a>
+	  </div>
+		<!-- Navbar closed  -->
+	<div class="mypersonalranking">
+		<h1 id="rankingtitle">My Personal Ranking of Destinations in Japan</h1>
+		<table>
+			<tr>
+				<td>Name of Place</td>
+				<td>Rank</td>
+				<td>Reason</td>
+			</tr>
+			<tr>
+				<td>Sapporo</td>
+				<td>1</td>
+				<td>Has a lot to do around the area and really good nature</td>
+			</tr>
+			<tr>
+				<td>Kyoto</td>
+				<td>2</td>
+				<td>Rich historical artifacts and cultural hotspot</td>
+			</tr>
+			<tr>
+				<td>Tokyo</td>
+				<td>3</td>
+				<td>Really fun nightlife and diversity of activities</td>
+			</tr>
+			<tr>
+				<td>Osaka</td>
+				<td>4</td>
+				<td>Good food and nice people, but felt like mini-tokyo</td>
+			</tr>
+      <tr>
+				<td>Nagoya</td>
+				<td>5</td>
+				<td>Not much memorable characteristic</td>
+			</tr>
+		</table>
+	</div>
+  </body>
+</html>
