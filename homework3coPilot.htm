@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+    <title>Homework 3 - Processing Forms</title>
+
+    <style>
+      /* Your styles go here */
+      form {background-color:silver; font-family:Arial; color:Navy;
+      padding-left:50px; padding-top:20px; padding-bottom:20px;
+      margin-right:auto; margin-left:auto; width:60%;}
+      .but {width:200px; height:60px; background-color:magenta; color:black;}
+      p#desc {margin:50px 200px; font-family:cursive; }
+      h3 {font-family:lucida handwriting; font-size:3em; text-align:center;}
+    </style>
+    
+    <script>
+	// In writing the prompt I just asked "give me a solution by reading the code and following the description mentioned in the p-tag"
+
+      function calculateTotal(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Get form values
+        let product = document.querySelector('input[name="product"]').value.trim().toLowerCase();
+        let quantity = document.querySelector('input[name="quantity"]').value.trim();
+        let amountDueField = document.querySelector('input[name="AmtDue"]');
+        
+        // Define product prices
+        const prices = {
+          milk: 3.50,
+          apple: 0.99,
+          fish: 5.99
+        };
+
+        // Validate product
+        if (!["milk", "apple", "fish"].includes(product)) {
+          alert("Please enter a valid product: Milk, Apple, or Fish.");
+          amountDueField.value = "";
+          return;
+        }
+
+        // Validate quantity
+        if (isNaN(quantity) || quantity === "") {
+          alert("Please enter a valid numeric quantity.");
+          amountDueField.value = "";
+          return;
+        }
+
+        // Convert quantity to number
+        quantity = parseFloat(quantity);
+
+        // Calculate the total cost
+        let totalCost = prices[product] * quantity;
+
+        // Show the total cost in the amount due field with two decimal places and prefixed with $
+        amountDueField.value = "$" + totalCost.toFixed(2);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>Homework 3</h3>
+    <p id="desc">
+      The form given below has 3 fields. Let us assume that the user will type in
+      the name of one of 3 products: Milk, Apple, or Fish. The user may enter these 
+      using any mix of cases, so be aware. You need to check to ensure that the user
+      enters a value. If it is not one of these 3, let the user know. 
+      Then the user will enter a quantity. You need to check to ensure that a quantity is entered 
+      (you may assume that 0 is a valid quality) and that the value is numeric. 
+      Once validated, use the following costs - 1 bottle of milk is $3.50; one 
+      apple is $0.99 and one pound of fish is $5.99 - and show the amount owed
+      in the third field. All of this should be done when the appropriate 
+      button is pressed. The amount must be shown with 2 decimal places and prefixed with
+      a $ (dollar) sign.     
+    </p>
+    <form action="" method="POST" onsubmit="calculateTotal(event)">
+      <p>
+        <input type="text" name="product" size="20" placeholder="Enter product..."/>
+        &nbsp; &nbsp;&nbsp;
+        <input type="text" name="quantity" size="20" placeholder="Enter quantity.."/>
+      </p>
+      <p>
+        <input type="text" name="AmtDue" size="20" placeholder="show amount due" readonly/>
+      </p>
+      <p>
+        <input class="but" type="submit" name="submit" value="What Do I Owe"/>
+        &nbsp; &nbsp;&nbsp;
+        <input class="but" type="reset" name="reset" value="Clear All"/>  
+      </p>
+    </form>
+	<p id="reflection">
+		In giving ChatGPT one prompt and giving me the code to do what the description specifies,
+		I was surprised by how elegant the code looked and how sophisticated it is compared to mine.
+		I think it did better with error handling and more complex coding to account for things that
+		can go wrong during the input process. The fact that it only took one iteration to fulfill this
+		was simply astonishing. I could see the reason why software engineers are slowly losing their
+		jobs and how importance of prompt engineering could be the next important career.
+	</p>
+  </body>
+</html>
