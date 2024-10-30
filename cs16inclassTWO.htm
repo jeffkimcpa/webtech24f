@@ -22,25 +22,37 @@
       event.preventDefault();
       var myform, euro, dollar;
       myform = document.getElementById("myform");
-      euro = myform.euro.value;
-      dollar = myform.dollar.value;
-
-      if ((isNaN(euro) == true) || (isNaN(dollar) == true)) {
-        alert("please give me a number");
+      euro = myform.euro.value
+      dollar = myform.dollar.value
+      if(euro=='' && dollar==''){
+        alert('Please give me either a dollar value or euro value to convert')
       }
 
-      else if ((euro!="") && (dollar!="")) {
-        alert("please empty one");
+      else if(euro!='' && dollar!=''){
+        alert('please empty one part.')
       }
 
-      else if ((euro==="") && (dollar!="")) {
-        euro = parseFloat(dollar)*0.93 
-      } 
-      
       else {
-        dollar = parseFloat(euro) / 0.93
+        if(myform.dollar.value!='' && myform.euro.value==''){
+          if(isNaN(myform.dollar.value)=true){
+            alert('please input only numbers')
+          }
+          else{
+            event.preventDefault();
+            myform.euro.value = parseFloat(myform.dollar.value) * 0.93
+          }
+        }
+        else {
+          if (isNaN(euro)=true){
+            alert('Please input only integers')
+          }
+          else{
+            event.preventDefault();
+            myform.dollar.value = parseFloat(myform.euro.value) / 0.93
+          }
+        }
       }
-
+      
     } 
 		
 	
