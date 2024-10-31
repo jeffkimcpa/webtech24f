@@ -13,19 +13,38 @@
     
     
     <script type="text/javascript">
-        
+      var myimgs = new Array('tiger5.jpg', 'tiger6.jpg', 'tiger7.jpg', 'tiger8.jpg')
+      var mycolors = new Array('yellow', 'lime','green', 'orange')
+      var mycaps = new Array('tiger 5', 'tiger 6', 'tiger 7', 'tiger 8')
+      var counter = 0;
+
+      function showSlides() {
+        var x = document.getElementById('daimg');
+        var y = document.getElementById('myhead')
+        x.src = myimgs[counter];
+        x.style.borderColor = mycolors[counter];
+        y.innerHTML = mycaps[counter]
+        ++ counter;
+        if (counter > myimgs.length - 1) {
+            counter = 0;
+        }
+        setTimeout('showSlides()', 1000)
+
+
+      }  
+
     </script>
 </head>
 <body>
     <p>
     
-    <img id="daimg" src="tiger5.jpg" alt="Slide Show of Tigers" title="Tigers"/>
-    
+    <img id="daimg" src='tiger5.jpg' alt="Slide Show of Tigers" title="Tigers"/>
+    <h3 id="myhead"></h4>
     </p>
     <h3 id="h"></h3>
     <!-- The above h3 will be used for showing a caption, if needed.-->
     <div id="b">
-        <button>Click to stop/resume</button>
+        <button onclick="showSlides()">Click to stop/resume</button>
     </div>
      
 </body>

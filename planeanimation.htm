@@ -4,7 +4,7 @@
 
   <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-	<title>Change this title</title>
+	<title>Plane Animation</title>
 
 	<style>
 	/* Your styles go here */
@@ -16,21 +16,31 @@
 	<script>
 	/* Your JavaScript goes here */
 	var pos = 0;
+	var flystatus = true, mytimer;
 
 	function flyPlane() {
-		var myplane;
+		var myplane;	
 		myplane = document.getElementById('daplane')
+		flystatus = false;
 		myplane.style.left = pos + 'px'
-		pos = pos + 10;
-		
+		pos += 1;
 		if(pos > 1000) {
 			pos = 0;
 		}
-
-		setTimeout('flyPlane()', 100)
-
-
+		mytimer = setTimeout('flyPlane()', 10)
 	}
+	
+	function startStop() {
+		if (flystatus == true) {
+			mytimer = setTimeout('flyPlane()', 10);
+		}
+		else {
+			clearTimeout(mytimer);
+			flystatus = true;
+		}
+	}
+
+	
 	
 	
 
@@ -43,7 +53,12 @@
 	<!-- Your HTML goes here -->
 	<img id="daplane" src="flying.jpg" alt="Flying Plane" title="Flier"/>
 	<br/>
-	<button onclick="flyPlane()">Click to Fly</button>
-	
+	<p>
+	<button onclick="startStop()">Start/Stop</button>
+	</p>
+	<br>
+	<p>
+	<button onclick="resetPlane()">Reset!</button>
+	</p>
   </body>
 </html>
