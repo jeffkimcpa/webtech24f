@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html> 
+
+<head>
+	<title> Quiz 3 - MU - Spring 24</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<style type="text/css">
+	p#HC {font-family:arial black; text-decoration:underline; color:maroon}
+	h2 {text-align:center; font-family:Cursive;}
+	p.eagle {float:left; background-color:Aqua; margin-left:100px;width:150px; height:100px; text-align:center;padding-top:50px; font-family:Lucida Bright;
+	          font-size:1em;}
+    .a {font-style:italic; font-weight:bold;}
+	
+	</style>
+	
+	<script type="text/javascript">
+
+		function showImg(x){
+			const display = document.getElementById('display')
+			var mytitle, block;
+			mytitle = document.getElementById('mytitle')
+			block1 = document.getElementById('block1')
+			block2 = document.getElementById('block2')
+			block3 = document.getElementById('block3')
+			block4 = document.getElementById('block4')
+
+			if(x=='1'){
+				display.src = 'baldeagle1.jpg'
+				display.alt = 'bald1'
+				display.title = '1st eagle'
+				display.style.border = 'ridge red 5px'
+				mytitle.innerHTML = 'See Eagle One'
+				block1.style.color = 'yellow'
+				block2.style.color = 'silver'
+				block3.style.color = 'silver'
+				block4.style.color = 'silver'
+			}
+			else if (x=='2'){
+				display.src = 'baldeagle2.jpg'
+				display.alt = 'bald2'
+				display.title = '2nd eagle'
+				display.style.border = 'dashed green 5px'
+				mytitle.innerHTML = 'See Eagle Two'
+				block1.style.backgroundColor = 'silver'
+				block2.style.backgroundColor = 'yellow'
+				block3.style.backgroundColor = 'silver'
+				block4.style.backgroundColor = 'silver'
+			}
+			else if (x=='3'){
+				display.src = 'baldeagle3.jpg'
+				display.alt = 'bald3'
+				display.title = '3rd eagle'
+				display.style.border = 'dotted blue 5px'
+				mytitle.innerHTML = 'See Eagle Three'
+				block1.style.background = 'silver'
+				block2.style.background = 'silver'
+				block3.style.background = 'yellow'
+				block4.style.background = 'silver'
+			}
+			else if (x=='Clear'){
+				display.src =''
+				display.alt = 'nothing'
+				display.title = 'null'
+				mytitle.innerHTML = 'The Void'
+				display.style.border = ''
+				block1.style.backgroundColor = 'silver'
+				block2.style.backgroundColor = 'silver'
+				block3.style.backgroundColor = 'silver'
+				block4.style.backgroundColor = 'yellow'
+			}
+		}
+	
+	</script>
+	
+</head>
+
+<body>
+
+<h1 style="text-align:center; font-family:Arial; font-weight:bold;">Quiz 3 - Make-Up(25 points)</h1>
+<p style="font-family:arial;font-size:16pt;color:navy;padding:10px 100px 10px 100px;">
+	Add appropriate functionality to the four aqua blocks below such that 
+	when the user clicks on each of the 3 aqua-colored blocks, there is a different image of the bald eagle 
+	displayed in the empty image holder above the blocks. The image should have a <span class="a">ridge border, red color, and 5px thick 
+	for the first image </span>, <span class="a">dashed border, green color, 5px thick </span>for the second, and <span class="a">blue color, dotted border, 5px thick</span>
+	for the third.The block that is clicked must have a yellow background. All others must have a silver background. 
+	The title above (Change this Image Title) must say "See Eagle One", "See Eagle Two" or "See Eagle Three".
+	Ensure that the image is completely defined in each case. 
+	When the user clicks on the last block, the title must go back to "Change This Image Title". No image must be shown.
+	No borders must be seen. All blocks must have the aqua background. 
+	For full points (25) please write it as a single function. For five (5) points less,
+	use as many functions as you need. 
+    
+	
+</p>
+<hr style="height:10px" />
+<h2 id="mytitle"> Change This Image Title</h2>
+<p style="text-align:center">
+	<img id="display" src="" alt="" title="This is the image" style="border:3px dotted black;" width="100" height="100"/>
+</p>
+<p style="text-align:center">
+	<p id="1" onclick="showImg(this.id)" class="eagle">See Eagle One</p> 
+    <p id="2" onclick="showImg(this.id)" class="eagle">See Eagle Two</p> 
+	<p id="3" onclick="showImg(this.id)" class="eagle">See Eagle Three</p>
+	<p id="Clear" onclick="showImg(this.id)" class="eagle">Clear It All</p>
+    
+	
+</p>
+
+
+</body>
+</html>
