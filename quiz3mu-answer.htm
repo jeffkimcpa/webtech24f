@@ -11,70 +11,66 @@
 	p.eagle {float:left; background-color:Aqua; margin-left:100px;width:150px; height:100px; text-align:center;padding-top:50px; font-family:Lucida Bright;
 	          font-size:1em;}
     .a {font-style:italic; font-weight:bold;}
-	#caption {
-		text-align: center;
-	}
 	
 	</style>
 	
 	<script type="text/javascript">
-		function seeEagle(x) {
+
+		function showImg(x){
 			const display = document.getElementById('display')
-			var block1, block2, block3, block4, mytitle, caption
-			block1 = document.getElementById('1')
-			block2 = document.getElementById('2')
-			block3 = document.getElementById('3')
-			block4 = document.getElementById('c')
+			var mytitle, block;
 			mytitle = document.getElementById('mytitle')
-			caption = document.getElementById('caption')
-			
-			
+			block1 = document.getElementById('block1')
+			block2 = document.getElementById('block2')
+			block3 = document.getElementById('block3')
+			block4 = document.getElementById('block4')
+
 			if(x=='1'){
 				display.src = 'baldeagle1.jpg'
+				display.alt = 'bald1'
+				display.title = '1st eagle'
 				display.style.border = 'ridge red 5px'
 				mytitle.innerHTML = 'See Eagle One'
-				caption.innerHTML = 'eagle 1'
-				block1.style.backgroundColor = 'yellow'
-				block2.style.backgroundColor = 'grey'
-				block3.style.backgroundColor = 'grey'
-				block4.style.backgroundColor = 'grey'
+				block1.style.color = 'yellow'
+				block2.style.color = 'silver'
+				block3.style.color = 'silver'
+				block4.style.color = 'silver'
 			}
-
-			else if(x=='2') {
+			else if (x=='2'){
 				display.src = 'baldeagle2.jpg'
+				display.alt = 'bald2'
+				display.title = '2nd eagle'
 				display.style.border = 'dashed green 5px'
 				mytitle.innerHTML = 'See Eagle Two'
-				caption.innerHTML = 'eagle 2'
-				block1.style.backgroundColor = 'grey'
+				block1.style.backgroundColor = 'silver'
 				block2.style.backgroundColor = 'yellow'
-				block3.style.backgroundColor = 'grey'
-				block4.style.backgroundColor = 'grey'
+				block3.style.backgroundColor = 'silver'
+				block4.style.backgroundColor = 'silver'
 			}
-
-			else if(x=='3'){
+			else if (x=='3'){
 				display.src = 'baldeagle3.jpg'
+				display.alt = 'bald3'
+				display.title = '3rd eagle'
 				display.style.border = 'dotted blue 5px'
 				mytitle.innerHTML = 'See Eagle Three'
-				caption.innerHTML = 'eagle 3'
-				block1.style.backgroundColor = 'grey'
-				block2.style.backgroundColor = 'grey'
-				block3.style.backgroundColor = 'yellow'
-				block4.style.backgroundColor = 'grey'
+				block1.style.background = 'silver'
+				block2.style.background = 'silver'
+				block3.style.background = 'yellow'
+				block4.style.background = 'silver'
 			}
-
-			else {
+			else if (x=='Clear'){
 				display.src =''
+				display.alt = 'nothing'
+				display.title = 'null'
+				mytitle.innerHTML = 'The Void'
 				display.style.border = ''
-				mytitle.innerHTML = 'Change This Image Title'
-				caption.innerHTML = ''
-				block1.style.backgroundColor = 'aqua'
-				block2.style.backgroundColor = 'aqua'
-				block3.style.backgroundColor = 'aqua'
-				block4.style.backgroundColor = 'aqua'
+				block1.style.backgroundColor = 'silver'
+				block2.style.backgroundColor = 'silver'
+				block3.style.backgroundColor = 'silver'
+				block4.style.backgroundColor = 'yellow'
 			}
-
 		}
-		
+	
 	</script>
 	
 </head>
@@ -102,12 +98,11 @@
 <p style="text-align:center">
 	<img id="display" src="" alt="" title="This is the image" style="border:3px dotted black;" width="100" height="100"/>
 </p>
-<p id="caption"></p>
 <p style="text-align:center">
-	<p id="1" onclick="seeEagle(this.id)" class="eagle">See Eagle One</p> 
-    <p id="2" onclick="seeEagle(this.id)" class="eagle">See Eagle Two</p> 
-	<p id="3" onclick="seeEagle(this.id)" class="eagle">See Eagle Three</p>
-	<p id="c" onclick="seeEagle(this.id)" class="eagle">Clear It All</p>
+	<p id="1" onclick="showImg(this.id)" class="eagle">See Eagle One</p> 
+    <p id="2" onclick="showImg(this.id)" class="eagle">See Eagle Two</p> 
+	<p id="3" onclick="showImg(this.id)" class="eagle">See Eagle Three</p>
+	<p id="Clear" onclick="showImg(this.id)" class="eagle">Clear It All</p>
     
 	
 </p>

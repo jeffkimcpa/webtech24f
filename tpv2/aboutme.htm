@@ -168,13 +168,36 @@
 	table, td {
 		border: ridge 2px blue;
 		text-align: center;
-		margin: auto;
+		margin: 20px;
 		padding: 5px;
 	}
 
+
 	#rankingtitle {
-		text-align: center;
+		text-align: justify;
 	}
+
+  #purpose {
+    margin: 20px;
+    font-size: medium;
+    background-color: aqua;
+    display: block;
+    clear: both;
+    border-radius: 2em;
+    padding: 10px;
+  }
+  
+  #purpose-content {
+    font-size: large;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
 	
 	</style>
 
@@ -255,9 +278,10 @@
 		  >&#9776;</a>
 	  </div>
 		<!-- Navbar closed  -->
-	<div class="mypersonalranking">
-		<h1 id="rankingtitle">My Personal Ranking of Destinations in Japan</h1>
-		<table>
+	<div class="content">
+    <div>
+    <table>
+      <h1 id="rankingtitle">My Personal Ranking of Destinations in Japan</h1>
 			<tr>
 				<td>Name of Place</td>
 				<td>Rank</td>
@@ -289,6 +313,16 @@
 				<td>Not much memorable characteristic</td>
 			</tr>
 		</table>
+  </div>
+  <div id="purpose">  
+    <h2>Why I Made This Website</h2>
+    <p id="purpose-content">
+      As an avid traveler myself, I really wanted to share my own thoughts in touring and exploring Japan on a personal level
+      to which I felt I had enough experience to provide such information. I have visited many cities besides the capital Tokyo,
+      immersing myself in diverse types of food, activities, site-seeing, and people. The top three cities I chose to review are
+      Tokyo, Kyoto, and Sapporo, which each have unique features in itself.
+    </p>
+  </div>
 	</div>
   </body>
 </html>
