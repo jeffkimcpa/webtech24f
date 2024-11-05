@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title></title>
+
+	<style>
+	/* Your styles go here */
+
+	div {
+		background-color: yellow;
+		height: 50px;
+	}
+
+	h3#mover {
+		position: absolute;
+	}
+	
+	
+	</style>
+	
+	<script type="text/javascript">
+		const mytext = new Array('This Quiz Must Be Hard','Brain feels really bad','This professor is avant-garde','This guy sings like a bard')
+		var pos = 800 , ctr = 0;
+
+		function scrollText() {
+			document.getElementById('mover').innerHTML = mytext[ctr]
+			document.getElementById('mover').style.left = pos + 'px'
+			pos -= 1
+			if (pos < 100){
+				pos = 800
+				++ ctr;
+				if (ctr >= mytext.length){
+					ctr = 0
+				}
+			}
+			setTimeout('scrollText()', 5)
+		}
+
+
+
+
+	</script>
+	
+	
+	
+	
+  </head>
+
+  <body onload="scrollText()">
+	<!-- Your HTML goes here -->
+	<div>
+		<h3 id="mover">ABC</h3>
+	</div>
+		
+	
+	
+  </body>
+</html>
