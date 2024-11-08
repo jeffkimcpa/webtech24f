@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Some Interesting Javascript Functions</title>
+
+	<style>
+	/* Your styles go here */
+	
+	
+	</style>
+	
+	<script>
+		function showMe()
+		{
+			const myprod = document.querySelector('input[name="prod"]').value.trim().toLowerCase()
+			const myqty = document.forms["f"]["qty"].value;
+			var myamtdue = document.forms["f"]["amtdue"]
+			const pricelist = {car:35000, motorcycle: 15000, cycle:5000}
+			if (!myprod in pricelist) {
+				alert('please enter a valid product')
+			}
+
+			else {
+				alert(pricelist[myprod])
+			}
+
+		}
+	</script>
+	
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+	<form method="POST" action="" id="f">
+		<p>
+			Product: &nbsp; <input type="text" name="prod" size="10">
+		</p>
+		<p>
+			Quantity: &nbsp; <input type="text" name="qty" size="10">
+		</p>
+		<p>
+			Amount Due: &nbsp; <input type="text" name="AmtDue" size="10">
+		</p>
+		<p>
+			<input onclick="showMe()" type="submit" name="submit" value="Show Me">
+			<input type="reset" name="reset" value="Clear Me">
+		</p>
+	</form>
+		
+	
+	
+  </body>
+</html>

@@ -28,7 +28,14 @@
 		function doOdd() {
 			const myodds = document.getElementsByClassName('odd')
 			const myevens = document.getElementsByClassName('even')
+			var x;
+			for (x = 0; x < myodds.length; ++x) {
+				myodds[x].style.backgroundColor = 'aqua';
+			}
 
+			for (x = 0; x < myevens.length; ++x) {
+				myevens[x].style.backgroundColor = 'coral'
+			}
 		}
 	</script>
 	
@@ -37,7 +44,7 @@
 	
   </head>
 
-  <body>
+  <body onload="doOdd()">
 	<!-- Your HTML goes here -->
 	<div class="odd">
 
