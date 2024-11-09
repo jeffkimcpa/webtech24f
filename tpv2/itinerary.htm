@@ -60,6 +60,27 @@
             border: none;
 			font-weight: bold;
         }
+		#generator-description {
+			text-align: center;
+			font-family: sans-serif;
+			font-style: italic;
+			font-size: medium;
+		}
+
+		#mysubmit {
+			width: 25%;
+		}
+
+		#myreset {
+			width: 25%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.mybutton {
+			display:block;
+			margin: auto;
+		}
 	
 	</style>
 	
@@ -311,10 +332,10 @@
 			alert('Just Generated Your Itinerary! Check below the form.')
 			// Display the itinerary in the "itineraryOutput" div
 			document.getElementById("itineraryOutput").innerHTML = `
-				<h3>Your Itinerary for ${mydestination}</h3>
-				<p><strong>Tourist Sites:</strong> ${selectedTouristPlaces[0]}, ${selectedTouristPlaces[1]}</p>
-				<p><strong>Eateries:</strong> ${selectedEateries[0]}, ${selectedEateries[1]}, ${selectedEateries[2]}</p>
-				<p><strong>Stay:</strong> ${selectedStays[0]}</p>`
+				<h3>Your Itinerary for ${mydestination} 🗾</h3>
+				<p> 🌸 <strong>Tourist Sites(2):</strong> ${selectedTouristPlaces[0]}, ${selectedTouristPlaces[1]}</p>
+				<p> 🌸 <strong>Eateries(3):</strong> ${selectedEateries[0]}, ${selectedEateries[1]}, ${selectedEateries[2]}</p>
+				<p> 🌸 <strong>Stay(1):</strong> ${selectedStays[0]}</p>`
 			document.getElementById("itineraryOutput").style.backgroundColor = 'yellow'
 			document.getElementById("itineraryOutput").style.fontFamily = 'sans-serif'
 			document.getElementById("itineraryOutput").style.padding = '2%'
@@ -382,7 +403,8 @@
 	  </div>
 		<!-- Navbar closed  -->
 
-		<h2>Choose Your Destination</h2>
+		<h2>⛩️Make Your Itinerary!🚅</h2>
+		<p id="generator-description"> Let us know where you're going and we'll recommend <span style="font-weight: bold; color: skyblue">1 place to stay, 2 tourist areas, and 3 eateries from our personal database</span></p>
         <form method="POST" action="" id="mysurvey">
             <h3 for="destination">Select a Destination:</h3>
             <select id="destination" name="destination" required>
@@ -392,8 +414,8 @@
                 <option value="Sapporo">Sapporo</option>
             </select>
 
-            <button type="submit" onclick="generateItinerary()">Submit</button>
-            <button type="reset" onclick="resetForm()">Reset</button>
+            <button id="mysubmit" type="submit" onclick="generateItinerary()" class="mybutton">Submit</button>
+            <button id="myreset" type="reset" onclick="resetForm()" class="mybutton">Reset</button>
         </form>
 		<div id="itineraryOutput">
 
