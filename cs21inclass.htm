@@ -19,11 +19,26 @@
 			const myqty = document.forms["f"]["qty"].value;
 			var myamtdue = document.forms["f"]["amtdue"]
 			const pricelist = {car:35000, motorcycle: 15000, cycle:5000}
+			const myset = ["car", "motorcycle","cycle"]
+			// if (!myset.includes(myprod))
+			// if (!myprod in myset)
+			
+			if (isNaN(myqty) || !(myqty)) {
+				alert("Please enter a valid value for quantity")
+				return
+			}
+
 			if (!myprod in pricelist) {
 				alert('please enter a valid product')
 			}
 
 			else {
+				let amt;
+				amt = myqty * pricelist[myprod]
+				myqty = parseInt(myqty)
+				event.preventDefault()
+				myamtdue.value = "$" + amt.toFixed(3);
+
 				alert(pricelist[myprod])
 			}
 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Quiz 4: Jeff Kim (probably 100%)</title><!-- Minus 1 if not filled -->
+
+	<style>
+	/* Your styles go here */
+    form { width:50%; margin-right:auto; margin-left:auto; padding-left:5%;
+           background-color:silver; padding-top:5%; padding-bottom:5%;}
+	textarea {border:3px ridge red;}
+	
+	#reminder {
+		font-family: Arial;
+		margin: 10px;
+		padding: 10px;
+		width: 70%;
+		font-weight: bold;
+		color: red;
+	}
+
+	.description {
+		text-align: justify;
+		font-family: Arial;
+		font-weight: bold;
+		margin: 0;
+	}
+		
+	</style>
+	<script type="text/javascript">
+		
+		function changeColor(){
+			event.preventDefault()
+			var myform, color1, color2
+			myform = document.getElementById("myform")
+			color1 = myform.color1.value
+			color2 = myform.color2.value
+			
+
+			if (color1 == "null" && color2 == "null"){
+				alert("Please choose two colors!")
+			}
+			else if (color1 == "null"){
+				alert("Please choose a color for color one")
+			}
+			else if(color2 == "null"){
+				alert("Please choose a color for color two")
+			}
+
+			else{
+				if(color1 == "green" && color2=="red"){
+					event.preventDefault();
+					myform.pallette.style.backgroundColor = "brown"
+				}
+				else if (color1=="green" && color2=="blue"){
+					myform.pallette.style.backgroundColor = "cyan"
+				}
+				else if (color1=="yellow" && color2=="red"){
+					myform.pallette.style.backgroundColor = "orange"
+				}
+				else if (color1=="yellow" && color2=="blue"){
+					myform.pallette.style.backgroundColor = "green"
+				}
+
+			}}
+		
+		function clearColor(){
+			event.preventDefault();
+			var myform
+
+			myform = document.getElementById("myform")
+			myform.color1.value = "null"
+			myform.color2.value = "null"
+			myform.pallette.style.backgroundColor = "";
+
+		}	
+			
+		
+
+
+
+	</script>
+	
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+		<form method="POST" action="" id="myform">
+			<h1 class="description">The Color Mixer</h1>
+			<p class="description"> select two colors and see the mixed result.</p>
+			<p>
+				<select name="color1">
+					<option value="null">Select Color One</option>
+					<option value="green">Green</option>
+					<option value="yellow">Yellow</option>
+				</select> &nbsp; &nbsp;
+				<select name="color2">
+					<option value="null">Select Color Two</option>
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+				</select> 
+			</p>
+			<p>
+				<textarea name="pallette"></textarea>
+			</p>
+            <p>
+                <input onclick="changeColor()" type="submit" name="submit" value="SHOW"/> &nbsp; &nbsp;
+                <input onclick="clearColor()" type="reset" name="reset" value="NO"/>
+            </p>
+			<p id="reminder">
+				Also just a reminder that I am still working on the content for the drop down pages and trying to figure out how to
+				highlight the menu button when clicked. Have a great weekend!
+			</p>
+		</form>
+
+	<!-- You are given a form with two drop down lists. Each list has two colors -->
+    <!-- The user will pick one color from each list. -->
+    <!-- Depending on the colors chosen, please set the background of the 
+        text area (the one with a red border) to the color that results from 
+        mixing the two colors chosen (17 points). You may use the following for this 
+        problem.-->
+    <!-- Green and Red makes Brown -->
+    <!-- Green and Blue makes Cyan -->
+    <!-- Yellow and Red makes Orange -->
+    <!-- Yellow and Blue makes Green -->
+    <!-- For the additional 8 points, warn the user if the user does not select 
+         a color from each list. Make sure you are specific with the error message.
+         The user must be told which list (the first or the second) the user did 
+         not select the color from. -->
+    
+		
+	
+	
+  </body>
+</html>
