@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title></title>
+
+	<style>
+	/* Your styles go here */
+	h1#a {
+		font-family: arial;
+		font-size: x-large;
+		padding: 20px;
+		text-align: center;
+	}
+
+	h2#b {
+		font-family: Lucida Handwriting;
+		color: navy;
+		margin-top: 100px;
+		text-align: center;
+	}
+	
+	</style>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.arctext.js"></script>
+	<script type="text/javascript" src="jquery.animateTyping.js"></script>
+	<script>
+		$(function(){
+			$("h1#a").click(function(){
+				$(this).arctext({radius:200, dir:1})
+				$("h2#b").arctext({radius:400, dir:-1})
+			})
+
+
+
+
+
+		});
+
+
+	</script>
+	
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+	<h1 id="a">this is a really cool function</h1>
+	<h2 id="b">i swear to god its cool, another way for it</h2>
+		
+	<div class="animate-typing"
+		data-type-speed="200"
+		data-type-delay="200"
+		data-remove-speed="50"
+		data-remove-delay="500"
+		data-animate-loop="true">
+		Thank you all for a great semester.
+	</div>
+	<script type="text/javascript" src="jquery.animateTyping.js"></script>
+	
+
+
+  </body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Personal Review of Japan and Traveling to Japan">
+	<meta name="keywords" content="budget traveling, Babson Japan, unique Japanese cities, Japan itinerary generator, travel Japan on a budget, Japan travel planning, hidden cities in Japan, affordable Japan trips, Japanese travel itinerary, Japan vacation planner, Japanese destinations">
+	<meta name="author" content="Jaehun Kim">
+	<title></title>
+	<link rel="stylesheet" href="navbar.css" type="text/css">
+	<style>
+	/* Your styles go here */
+	.container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: black;
+			font-family: sans-serif;
+        }
+        h3 {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+			font-family: sans-serif;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            cursor: pointer;
+        }
+        button[type="submit"] {
+            background-color: lightgreen;
+            color: white;
+            border: none;
+			font-weight: bold;
+        }
+
+		button:hover {
+			font-style: underline;
+        }
+
+        button[type="reset"] {
+            background-color: orange;
+            color: black;
+            border: none;
+			font-weight: bold;
+        }
+		#generator-description {
+			text-align: center;
+			font-family: sans-serif;
+			font-style: italic;
+			font-size: medium;
+		}
+
+		#mysubmit {
+			width: 25%;
+		}
+
+		#myreset {
+			width: 25%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.mybutton {
+			display:block;
+			margin: auto;
+		}
+	
+	</style>
+	
+<script type="text/javascript">
+		const tokyoEatery = [
+				"Yasube (Ebisu)",
+				"Ichiran Ramen (Shibuya)",
+				"Ginza Kojyu (Kaiseki)",
+				"Sukiyabashi Jiro (Sushi)",
+				"Tsukiji Outer Market (Seafood)",
+				"Afuri Ramen (Yuzu Ramen)",
+				"Dominique Ansel Bakery Tokyo",
+				"Narisawa (French-Japanese Fusion)",
+				"Toriki (Yakitori)",
+				"Flipper's (Souffle Pancakes)",
+				"Bread, Espresso & (Omotesando)",
+				"Patisserie Sadaharu Aoki (French Pastries with Japanese Flavors)",
+				"Kimuraya (Anpan Bakery)",
+				"Udon Shin (Udon)",
+				"Tempura Kondo (Tempura)",
+				"Killfish Bakery (Harajuku)",
+				"Blue Bottle Coffee (Shinjuku)",
+				"Suzukien Asakusa (Matcha Gelato)",
+				"Pizza Studio Tamaki",
+				"The Little Bakery Tokyo",
+				"Asakusa Kagetsudo (Melon Pan)",
+				"Isomaru Suisan",
+				"Roku Roku (High-End Sushi)"
+			];
+		const kyotoEatery = [
+				"Gion Kappa (Izakaya)",
+				"Nakamura Tokichi (Matcha Desserts)",
+				"Kikunoi (Kaiseki)",
+				"Saryo Tsujiri (Green Tea Parlor)",
+				"Ippudo Ramen Kyoto",
+				"OGAWA Coffee Kyoto (Specialty Coffee)",
+				"Shinshindo Bakery (Historic French Bakery)",
+				"Honke Owariya (Soba Noodles)",
+				"Menbaka Fire Ramen",
+				"Cafe Bibliotic Hello! (Bakery Cafe)",
+				"Kyoto Kitcho Arashiyama (Kaiseki)",
+				"Kyo Baum (Matcha and Vanilla Baumkuchen)",
+				"Le Bac à Sable (French-inspired Patisserie)",
+				"Inoda Coffee Honten (Traditional Coffee Shop)",
+				"Yojiya Cafe (Ginkaku-ji Store)",
+				"Hyotei (Traditional Kaiseki)",
+				"Sizuya Bakery (Kyoto Specialties)",
+				"Ganko Sushi (Traditional Sushi)",
+				"Donguri (Okonomiyaki)",
+				"Gion Tsujiri (Matcha Parfait and Desserts)"
+			];
+		const sapporoEatery = [
+				"Ramen Shingen (Miso Ramen)",
+				"Soup Curry GARAKU",
+				"Naruto (Fried Chicken)",
+				"Daruma (Mongolian Lamb BBQ)",
+				"Hanamaru Sushi (Fresh Sushi)",
+				"LeTao (Cheesecake and Pastries)",
+				"Milk Mura (Soft Cream Parlor)",
+				"Sapporo Beer Garden (Jingisukan - Grilled Mutton)",
+				"Kinotoya Bake (Cheese Tarts)",
+				"Sapporo Sweets Cafe",
+				"Mikuni Sapporo (French-Japanese Fusion)",
+				"Kani Honke (Crab Specialty)",
+				"Tokachi Butadon Ippin (Pork Rice Bowls)",
+				"Patisserie Petit Merveille",
+				"Tanukikoji Ramen Alley",
+				"Moliere (French Cuisine)",
+				"Yoshiyama Shoten (Soup Curry)",
+				"Patisserie Chocolatier Masale",
+				"Donburi Chaya (Seafood Rice Bowls)",
+				"Kitakaro (Bakery and Confectionery)",
+				"Arinko (Imo Mochi - Potato Rice Cakes)",
+				"Rokkatei (Marusei Butter Sandwich)"
+			];
+		const tokyoSite = [
+				"Tokyo Tower",
+				"Senso-ji Temple",
+				"Meiji Shrine",
+				"Shibuya Crossing",
+				"Tokyo Skytree",
+				"Ueno Park and Zoo",
+				"Akihabara (Electronics and Anime District)",
+				"Ginza Shopping District",
+				"Tsukiji Outer Market",
+				"Roppongi Hills and Mori Tower",
+				"Odaiba (Entertainment District)",
+				"Imperial Palace",
+				"Harajuku (Takeshita Street)",
+				"Asakusa",
+				"Yoyogi Park",
+				"National Museum of Modern Art",
+				"Kabukicho (Entertainment and Nightlife District)",
+				"Ryogoku (Sumo District)",
+				"Shinjuku Gyoen National Garden",
+				"Hamarikyu Gardens"
+			];
+		const kyotoSite = [
+				"Kinkaku-ji (Golden Pavilion)",
+				"Fushimi Inari Shrine",
+				"Kiyomizu-dera Temple",
+				"Arashiyama Bamboo Grove",
+				"Gion District",
+				"Nijo Castle",
+				"Philosopher's Path",
+				"To-ji Temple",
+				"Ryoan-ji Temple",
+				"Nishiki Market",
+				"Yasaka Shrine",
+				"Kyoto Imperial Palace",
+				"Heian Shrine",
+				"Pontocho Alley",
+				"Ginkaku-ji (Silver Pavilion)",
+				"Maruyama Park",
+				"Sanjusangendo Temple",
+				"Tenryu-ji Temple",
+				"Eikando Temple",
+				"Sagano Scenic Railway"
+			];
+		const sapporoSite = [
+				"Odori Park",
+				"Sapporo Snow Festival",
+				"Moerenuma Park",
+				"Sapporo Beer Museum",
+				"Mount Moiwa",
+				"Susukino District",
+				"Jozankei Onsen",
+				"Hokkaido Shrine",
+				"Shiroi Koibito Park",
+				"Nijo Market",
+				"Hokkaido University Botanical Gardens",
+				"Historical Village of Hokkaido",
+				"Sapporo Clock Tower",
+				"Nakajima Park",
+				"Sapporo TV Tower",
+				"Maruyama Park",
+				"Asahiyama Memorial Park",
+				"Takino Suzuran Hillside Park",
+				"Sapporo Art Park",
+				"Mount Teine Ski Resort",
+				"Shirogane Blue Pond",
+				"Ningle Terrace"
+			];
+		const tokyoStay = [
+				"Tokyo ¥1980 Hotel",
+				"Capsule Inn Komagome",
+				"Hotel Mystays Asakusa",
+				"Khaosan Tokyo Origami",
+				"Sakura Hotel Jimbocho",
+				"Grids Tokyo Asakusa-Bashi Hotel & Hostel",
+				"Hotel Horidome Villa",
+				"UNPLAN Shinjuku",
+				"WISE OWL HOSTELS SHIBUYA",
+				"Book And Bed Tokyo Ikebukuro"
+			];
+
+		const kyotoStay = [
+				"Piece Hostel Sanjo",
+				"K's House Kyoto",
+				"Santiago Guesthouse Kyoto",
+				"Kyoto Morris Hostel",
+				"Guesthouse Wind Villa",
+				"The Lower East Nine Hostel",
+				"Len Kyoto Kawaramachi",
+				"Imano Kyoto Kiyomizu Hostel",
+				"Guesthouse Soi",
+				"Capsule Ryokan Kyoto"
+			];
+
+		const sapporoStay = [
+				"Hotel Plus Hostel Sapporo",
+				"Guest House Yasube",
+				"Plat Hostel Keikyu Sapporo Sky",
+				"Theatel Sapporo",
+				"Choine Hotel Sapporo Teine",
+				"Ten to Ten Hostel",
+				"Hotel Mystays Sapporo Station",
+				"Koko Hotel Sapporo Ekimae",
+				"Sapporo Grand Hotel",
+				"Hotel Gracery Sapporo"
+			];
+
+		function generateItinerary() {
+			event.preventDefault()
+			var myform
+			myform = document.getElementById("mysurvey");
+			mydestination = myform.destination.value
+			
+
+			if (mydestination == 'Tokyo') {
+				touristPlaces = tokyoSite;
+				eateries = tokyoEatery;
+				stays = tokyoStay;
+    		} 
+			else if (mydestination == 'Kyoto') {
+				touristPlaces = kyotoSite;
+				eateries = kyotoEatery;
+				stays = kyotoStay;
+    		} 
+			else if (mydestination == 'Sapporo') {
+				touristPlaces = sapporoSite;
+				eateries = sapporoEatery;
+				stays = sapporoStay;
+			} 
+			else if (mydestination == '') {
+				alert('Please choose a destination to generate your itinerary.');
+				return;
+			}
+
+			// Function to select two unique random items from an array
+			function getThreeRandomItems(array) {
+				let selectedItems = [];
+				while (selectedItems.length < 3) {
+					const randomItem = array[Math.floor(Math.random() * array.length)];
+					if (!selectedItems.includes(randomItem)) {
+						selectedItems.push(randomItem);
+					}
+				}
+				return selectedItems;
+			}
+			
+			function getTwoRandomItems(array) {
+				let selectedItems = [];
+				while (selectedItems.length < 2) {
+					const randomItem = array[Math.floor(Math.random() * array.length)];
+					if (!selectedItems.includes(randomItem)) {
+						selectedItems.push(randomItem);
+					}
+				}
+				return selectedItems;
+			}
+
+			function getOneRandomItem(array) {
+				let selectedItems = [];
+				while (selectedItems.length < 1) {
+					const randomItem = array[Math.floor(Math.random() * array.length)];
+					if (!selectedItems.includes(randomItem)) {
+						selectedItems.push(randomItem);
+					}
+				}
+				return selectedItems;
+			}
+
+			// Get two unique random tourist places and eateries
+			const selectedTouristPlaces = getTwoRandomItems(touristPlaces);
+			const selectedEateries = getThreeRandomItems(eateries);
+			const selectedStays = getOneRandomItem(stays)
+
+			alert('Just Generated Your Itinerary! Check below the form.')
+			// Display the itinerary in the "itineraryOutput" div
+			document.getElementById("itineraryOutput").innerHTML = `
+				<h3>Your Itinerary for ${mydestination} 🗾</h3>
+				<p> 🌸 <strong>Tourist Sites(2):</strong> ${selectedTouristPlaces[0]}, ${selectedTouristPlaces[1]}</p>
+				<p> 🌸 <strong>Eateries(3):</strong> ${selectedEateries[0]}, ${selectedEateries[1]}, ${selectedEateries[2]}</p>
+				<p> 🌸 <strong>Stay(1):</strong> ${selectedStays[0]}</p>`
+			document.getElementById("itineraryOutput").style.backgroundColor = 'yellow'
+			document.getElementById("itineraryOutput").style.fontFamily = 'sans-serif'
+			document.getElementById("itineraryOutput").style.padding = '2%'
+			document.getElementById("itineraryOutput").style.borderRadius = '15px'
+			
+	}
+			
+			
+
+
+
+
+
+</script>
+	
+	
+	
+  </head>
+
+  <body>
+	<!-- Your HTML goes here -->
+	<div id="banner" onclick='changeMe()'>
+		<h1 id="heading">Plan Your Trip to Japan!🎌</h1>
+	  </div>
+	  <!-- This starts the menu -->
+	  <div class="topnav" id="mytopnav">
+		<a href="index.htm" class="active">Home</a>
+		<a href="contact.htm">Contact</a>
+		<a href="sitemap.htm">Site Map</a>
+		<a href="aboutme.htm">About Me</a>
+		<div class="dropdown">
+		  <button class="dropdownbutton">Tokyo</button>
+		  <div class="dropdowncontent">
+			<a href="info-tokyo.htm">Info</a>
+			<a href="eateries-tokyo.htm">Eateries</a>
+			<a href="sightseeing-tokyo.htm">Sightseeing</a>
+			<a href="stays-tokyo.htm">Stays</a>
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <button class="dropdownbutton">Kyoto</button>
+		  <div class="dropdowncontent">
+			<a href="info-kyoto.htm">Info</a>
+			<a href="eateries-kyoto.htm">Eateries</a>
+			<a href="sightseeing-kyoto.htm">Sightseeing</a>
+			<a href="stays-kyoto.htm">Stays</a>
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <button class="dropdownbutton">Sapporo</button>
+		  <div class="dropdowncontent">
+			<a href="info-sapporo.htm">Info</a>
+			<a href="eateries-sapporo.htm">Eateries</a>
+			<a href="sightseeing-sapporo.htm">Sightseeing</a>
+			<a href="stays-sapporo.htm">Stays</a>
+			</div>
+		</div>
+		<a href="itinerary.htm">Make Your Itinerary</a>
+		<a
+		  href="javascript:void(0);"
+		  style="font-size: 15px"
+		  class="icon"
+		  onclick="myFunction()"
+		  >&#9776;</a>
+	  </div>
+		<!-- Navbar closed  -->
+
+		<h2>⛩️Make Your Itinerary!🚅</h2>
+		<p id="generator-description"> Let us know where you're going and we'll recommend <span style="font-weight: bold; color: skyblue">1 place to stay, 2 tourist areas, and 3 eateries from our personal database</span></p>
+        <form method="POST" action="" id="mysurvey">
+            <h3 for="destination">Select a Destination:</h3>
+            <select id="destination" name="destination" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Tokyo">Tokyo</option>
+                <option value="Kyoto">Kyoto</option>
+                <option value="Sapporo">Sapporo</option>
+            </select>
+
+            <button id="mysubmit" type="submit" onclick="generateItinerary()" class="mybutton">Submit</button>
+            <button id="myreset" type="reset" onclick="resetForm()" class="mybutton">Reset</button>
+        </form>
+		<div id="itineraryOutput">
+
+		</div>
+	
+	
+  </body>
+</html>
