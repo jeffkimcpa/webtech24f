@@ -126,6 +126,20 @@
 		}
 	}
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.topnav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            // Remove the `active` class from all links
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            
+            // Add the `active` class to the clicked link
+            this.classList.add('active');
+        });
+    });
+});
+
 function makeBig(x) {
                 var myimg;
                 myimg = document.getElementById(x);
@@ -188,6 +202,7 @@ function makeSmall(x) {
 	  </div>
 		<!-- Navbar closed  -->
     <h2 class="introduction">Welcome! A place where you can get to know Japan!</h2>
+    <h3 class="introduction">(click on the banner image for a surprise!)</h3>
     <div id="typing-animation" class="animate-typing"
 		data-type-speed="200"
 		data-type-delay="200"
@@ -197,7 +212,6 @@ function makeSmall(x) {
 		Hope this helps on your next journey to Japan! 🛫
 	</div>
 	<script type="text/javascript" src="jquery.animateTyping.js"></script>
-    <h3 class="introduction">(click on the banner image for a surprise!)</h3>
     <div class ="intro-contents">
       <p class="introduction"> 
       Japan is an islandic country, located in East-Asia with a current population of <a href="https://www.worldometers.info/world-population/japan-population/" target="_blank">125.1 million.</a>
@@ -222,7 +236,7 @@ function makeSmall(x) {
         <area target="_blank" coords="166,210,100,245" title="kyoto" href="https://kyoto.travel/en/" alt="kyoto" shape="rect">
         <area target="_blank" coords="294,42,242,82" title="sapporo" href="https://www.sapporo.travel/en/" alt="sapporo" shape="rect">
       </map>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/SW1qatQ3TGk?si=lyM4YsKzA0NjFYsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4Mtc2E7fkZ4?si=M8UVA4YcqKRjQYkW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   
     <div class="structureofwebsite">
