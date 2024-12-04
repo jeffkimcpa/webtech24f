@@ -1,75 +1,146 @@
 <!DOCTYPE html>
-
 <html lang="en"> 
 
-  <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Personal Review of Japan and Traveling to Japan">
-	<meta name="keywords" content="budget traveling, Babson Japan, unique Japanese cities, Japan itinerary generator, travel Japan on a budget, Japan travel planning, hidden cities in Japan, affordable Japan trips, Japanese travel itinerary, Japan vacation planner, Japanese destinations">
-	<meta name="author" content="Jaehun Kim"> 
-	<title></title>
-	<link rel="stylesheet" href="navbar.css" type="text/css">
-	<style>
-	/* Your styles go here */
-	
-	
-	</style>
-	
-	
-	
-	
-	
-  </head>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Personal Review of Japan and Traveling to Japan">
+    <meta name="keywords" content="budget traveling, Babson Japan, unique Japanese cities, Japan itinerary generator, travel Japan on a budget, Japan travel planning, hidden cities in Japan, affordable Japan trips, Japanese travel itinerary, Japan vacation planner, Japanese destinations">
+    <meta name="author" content="Jaehun Kim"> 
+    <title>Plan Your Trip to Japan</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <style>
+        /* Your styles go here */
+        #title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+			margin-top: 20px;
+        }
+        #slideshow {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+        #slideshow img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        #caption {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .slideshow-buttons {
+			margin-top: 10px;
+			display: flex;
+			justify-content: center;
+		}
+        .slideshow-buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: skyblue;
+            color: white;
+            cursor: pointer;
+			margin: 0 5px;
+			
+        }
+        .slideshow-buttons button:hover {
+            background-color: coral;
+        }
+    </style>
+</head>
 
-  <body>
-	<!-- Your HTML goes here -->
-	<div id="banner" onclick='changeMe()'>
-		<h1 id="heading">Plan Your Trip to Japan!🎌</h1>
-	  </div>
-	  <!-- This starts the menu -->
-	  <div class="topnav" id="mytopnav">
-		<a href="index.htm" class="active">Home</a>
-		<a href="contact.htm">Contact</a>
-		<a href="sitemap.htm">Site Map</a>
-		<a href="aboutme.htm">About Me</a>
-		<div class="dropdown">
-		  <button class="dropdownbutton">Tokyo</button>
-		  <div class="dropdowncontent">
-			<a href="info-tokyo.htm">Info</a>
-			<a href="eateries-tokyo.htm">Eateries</a>
-			<a href="sightseeing-tokyo.htm">Sightseeing</a>
-			<a href="stays-tokyo.htm">Stays</a>
-		  </div>
+<body>
+    <div id="banner" onclick='changeMe()'>
+        <h1 id="heading">Plan Your Trip to Japan!🎌</h1>
+    </div>
+    <!-- Navbar -->
+    <div class="topnav" id="mytopnav">
+        <a href="index.htm" class="active">Home</a>
+        <a href="contact.htm">Contact</a>
+        <a href="aboutme.htm">About Me</a>
+        <div class="dropdown">
+            <button class="dropdownbutton">Tokyo</button>
+            <div class="dropdowncontent">
+                <a href="info-tokyo.htm">Info</a>
+                <a href="eateries-tokyo.htm">Eateries</a>
+                <a href="sightseeing-tokyo.htm">Sightseeing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdownbutton">Kyoto</button>
+            <div class="dropdowncontent">
+                <a href="info-kyoto.htm">Info</a>
+                <a href="eateries-kyoto.htm">Eateries</a>
+                <a href="sightseeing-kyoto.htm">Sightseeing</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdownbutton">Sapporo</button>
+            <div class="dropdowncontent">
+                <a href="info-sapporo.htm">Info</a>
+                <a href="eateries-sapporo.htm">Eateries</a>
+                <a href="sightseeing-sapporo.htm">Sightseeing</a>
+            </div>
+        </div>
+        <a href="itinerary.htm">Make Your Itinerary</a>
+        <a href="javascript:void(0);" style="font-size: 15px" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <!-- Navbar closed -->
+    <div id="title">Personally Recommended Eateries for Kyoto!</div>
+    <div id="slideshow">
+        <img id="currentImage" src="" alt="Slideshow Image">
+        <div id="caption"></div>
+		<div class="slideshow-buttons">
+			<button id="prevButton">Previous</button>
+			<button id="nextButton">Next</button>
 		</div>
-		<div class="dropdown">
-		  <button class="dropdownbutton">Kyoto</button>
-		  <div class="dropdowncontent">
-			<a href="info-kyoto.htm">Info</a>
-			<a href="eateries-kyoto.htm">Eateries</a>
-			<a href="sightseeing-kyoto.htm">Sightseeing</a>
-			<a href="stays-kyoto.htm">Stays</a>
-		  </div>
-		</div>
-		<div class="dropdown">
-		  <button class="dropdownbutton">Sapporo</button>
-		  <div class="dropdowncontent">
-			<a href="info-sapporo.htm">Info</a>
-			<a href="eateries-sapporo.htm">Eateries</a>
-			<a href="sightseeing-sapporo.htm">Sightseeing</a>
-			<a href="stays-sapporo.htm">Stays</a>
-			</div>
-		</div>
-		<a href="itinerary.htm">Make Your Itinerary</a>
-		<a
-		  href="javascript:void(0);"
-		  style="font-size: 15px"
-		  class="icon"
-		  onclick="myFunction()"
-		  >&#9776;</a>
-	  </div>
-		<!-- Navbar closed  -->
-		
-	
-	
-  </body>
+    </div>
+
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = [
+                { src: 'kyotophoto/eatery1.jpeg', caption: 'Kichi Kichi, Zaimokucho' },
+                { src: 'kyotophoto/eatery2.jpeg', caption: 'Unagi Sansho Gogyou, Shikiamicho' },
+                { src: 'kyotophoto/eatery3.jpeg', caption: 'Tsubomi, Omiya' },
+				{ src: 'kyotophoto/eatery4.jpeg', caption: 'Kotoimo Honpo, Tateishicho' },
+				{ src: 'kyotophoto/eatery5.jpeg', caption: 'Gyukatsu Motomura, Kawaramachi' },
+				{ src: 'kyotophoto/eatery6.jpeg', caption: 'Gyukushi Bunjo, Pontocho' },
+				{ src: 'kyotophoto/eatery7.jpeg', caption: 'Gion Kappa, Gion' }
+            ];
+
+            let currentIndex = 0;
+
+            const imageElement = document.getElementById('currentImage');
+            const captionElement = document.getElementById('caption');
+            const nextButton = document.getElementById('nextButton');
+
+            function updateSlideshow() {
+                const currentImage = images[currentIndex];
+                imageElement.src = currentImage.src;
+                captionElement.textContent = currentImage.caption;
+            }
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateSlideshow();
+            });
+
+			prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop backward
+                updateSlideshow();
+            });
+
+
+            // Initialize the slideshow
+            updateSlideshow();
+        });
+    </script>
+</body>
 </html>
