@@ -1,163 +1,148 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html lang="en"> 
-
-  <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-	<title></title>
-  <link rel="stylesheet" href="navbar.css" type="text/css">
-	<style>
-	/* Your styles go here */
-	
-    form {
-      font-family: sans-serif;
-      font-weight: bold;
-      background-color: bisque;
-      margin-top: 0;
-      padding: 20px;
-    }
-	
-	</style>
-	<script>
-		function checkValidity() {
-			var myform
-			myform = document.getElementById('contactus')
-			username = myform.name.value
-			type = myform.type.value
-			phone = myform.phone.value
-			email = myfoorm.email.value
-			if (username==''||type==''||phone==''||email==''){
-				alert('Please enter all fields')
-			}
-			else{
-				alert('Thank you for your submission, we will get back to you soon')
-			}
-		}
-
-		function myFunction() {
-        var x = document.getElementById("mytopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Japan Travel</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <style>
+        form {
+            font-family: sans-serif;
+            font-weight: bold;
+            background-color: bisque;
+            margin-top: 0;
+            padding: 20px;
         }
-    }
 
-	function changeMe() {
-		var x;
-		x = document.getElementById('banner');
-		if (x.style.backgroundImage.includes('japan_banner.jpg'))
-			{
-			x.style.backgroundImage = "url('japan_banner2.jpg')";
-			}
-		else
-		{
-			x.style.backgroundImage = "url(japan_banner.jpg)";
-		}
-	}
-	document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.topnav a');
+        .download-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            // Remove the `active` class from all links
-            navLinks.forEach(nav => nav.classList.remove('active'));
-            
-            // Add the `active` class to the clicked link
-            this.classList.add('active');
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Handle navbar link activation
+            const navLinks = document.querySelectorAll('.topnav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Handle download button
+            const downloadBtn = document.getElementById('downloadBtn');
+            downloadBtn.addEventListener('click', function () {
+                const link = document.createElement('a');
+                link.href = 'sapporo-travel-map.jpg'; // Adjust path to your file
+                link.download = 'sapporo-travel-map.jpg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            // Form validation
+            document.querySelector('form').addEventListener('submit', function (event) {
+                const myform = document.getElementById('contactus');
+                const username = myform.name.value;
+                const type = myform.type.value;
+                const phone = myform.phone.value;
+                const email = myform.email.value;
+
+                if (!username || !type || !phone || !email) {
+                    event.preventDefault();
+                    alert('Please enter all fields');
+                } else {
+                    alert('Thank you for your submission, we will get back to you soon');
+                }
+            });
         });
-    });
-});
-	</script>
-  </head>
 
-  <body>
-	<!-- Your HTML goes here -->
-	<!-- Navbar -->
-	<div id="banner" onclick='changeMe()'>
-		<h1 id="heading">Plan Your Trip to Japan!🎌</h1>
-	  </div>
-	  <!-- This starts the menu -->
-	  <div class="topnav" id="mytopnav">
-		<a href="index.htm" class="active">Home</a>
-		<a href="contact.htm">Contact</a>
-		<a href="aboutme.htm">About Me</a>
-		<div class="dropdown">
-		  <button class="dropdownbutton">Tokyo</button>
-		  <div class="dropdowncontent">
-			<a href="info-tokyo.htm">Info</a>
-			<a href="eateries-tokyo.htm">Eateries</a>
-			<a href="sightseeing-tokyo.htm">Sightseeing</a>
-		  </div>
-		</div>
-		<div class="dropdown">
-		  <button class="dropdownbutton">Kyoto</button>
-		  <div class="dropdowncontent">
-			<a href="info-kyoto.htm">Info</a>
-			<a href="eateries-kyoto.htm">Eateries</a>
-			<a href="sightseeing-kyoto.htm">Sightseeing</a>
-		  </div>
-		</div>
-		<div class="dropdown">
-		  <button class="dropdownbutton">Sapporo</button>
-		  <div class="dropdowncontent">
-			<a href="info-sapporo.htm">Info</a>
-			<a href="eateries-sapporo.htm">Eateries</a>
-			<a href="sightseeing-sapporo.htm">Sightseeing</a>
-			</div>
-		</div>
-		<a href="itinerary.htm">Make Your Itinerary</a>
-		<a
-		  href="javascript:void(0);"
-		  style="font-size: 15px"
-		  class="icon"
-		  onclick="myFunction()"
-		  >&#9776;</a>
-	  </div>
-		<!-- Navbar closed  -->
-	<form id="contactus" action="POST">
-		<p>
-		Travel Experience to Japan <br>
-		First time: <input type="radio" name="prior" value="FIRST">
-		Been there before: <input type="radio" name="prior" value="BEEN">
-		</p>
+        function myFunction() {
+            const x = document.getElementById("mytopnav");
+            x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
+        }
 
-    <p>
-      Inquiry Type:
-      <select name="type" id="Inquiry" placeholder="select!">
-        <option value="EMPT">Please select one</option>
-        <option value="COMP">Complaint</option>
-        <option value="CORR">Correction</option>
-        <option value="PART">Partnership</option>
-        <option value="OTHE">Other</option>
-      </select> 
-    </p>
+        function changeMe() {
+            const x = document.getElementById('banner');
+            x.style.backgroundImage = x.style.backgroundImage.includes('japan_banner.jpg')
+                ? "url('japan_banner2.jpg')"
+                : "url('japan_banner.jpg')";
+        }
+    </script>
+</head>
 
-		<p>
-		Name: <input name="name" type="text" size="12">
-		</p>
+<body>
+    <div id="banner" onclick='changeMe()'>
+        <h1 id="heading">Plan Your Trip to Japan!🎌</h1>
+    </div>
 
-		<p>
-		Phone Number: <input name="phone" type="text" size="12">
-		</p>
+    <div class="topnav" id="mytopnav">
+        <a href="index.htm" class="active">Home</a>
+        <a href="contact.htm">Contact</a>
+        <a href="aboutme.htm">About Me</a>
+        <div class="dropdown">
+            <button class="dropdownbutton">Tokyo</button>
+            <div class="dropdowncontent">
+                <a href="info-tokyo.htm">Info</a>
+                <a href="eateries-tokyo.htm">Eateries</a>
+                <a href="sightseeing-tokyo.htm">Sightseeing</a>
+            </div>
+        </div>
+        <!-- Additional dropdowns here -->
+        <a href="itinerary.htm">Make Your Itinerary</a>
+        <a href="javascript:void(0);" style="font-size: 15px" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
 
-		<p>
-		Email: <input name="email" type="text" size="12">
-		</p>
-	
+    <form id="contactus" action="">
+        <p>
+            Travel Experience to Japan <br>
+            First time: <input type="radio" name="prior" value="FIRST">
+            Been there before: <input type="radio" name="prior" value="BEEN">
+        </p>
 
+        <p>
+            Inquiry Type:
+            <select name="type" id="Inquiry">
+                <option value="">Please select one</option>
+                <option value="COMP">Complaint</option>
+                <option value="CORR">Correction</option>
+                <option value="PART">Partnership</option>
+                <option value="OTHE">Other</option>
+            </select>
+        </p>
 
-		<p>
-		Questions or Comment: <br>
-		<textarea name="question" cols="40" rows="8" id=""></textarea>
-		</p>
-		
-		<input onclick="checkValidity()" type="submit" value="SUBMIT">
-		<input type="reset" value="CLEAR">
+        <p>
+            Name: <input name="name" type="text" size="12">
+        </p>
 
-	</form>
-		
-	
-	
-  </body>
+        <p>
+            Phone Number: <input name="phone" type="text" size="12">
+        </p>
+
+        <p>
+            Email: <input name="email" type="text" size="12">
+        </p>
+
+        <p>
+            Questions or Comment: <br>
+            <textarea name="question" cols="40" rows="8"></textarea>
+        </p>
+
+        <input type="submit" value="SUBMIT">
+        <input type="reset" value="CLEAR">
+    </form>
+
+    <button id="downloadBtn" class="download-button">Travel Map for Sapporo</button>
+</body>
+
 </html>
